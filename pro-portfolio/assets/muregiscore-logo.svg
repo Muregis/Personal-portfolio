@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="MuregiScore emblem">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f9d976"/>
+      <stop offset="50%" stop-color="#f6c34b"/>
+      <stop offset="100%" stop-color="#d89b24"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="32" fill="#0b0f17"/>
+  <circle cx="200" cy="200" r="150" fill="none" stroke="url(#gold)" stroke-width="10"/>
+  <circle cx="200" cy="200" r="120" fill="none" stroke="url(#gold)" stroke-width="6" opacity="0.7"/>
+  <path d="M140 280 L160 120 L200 240 L240 120 L260 280" fill="none" stroke="url(#gold)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="220" text-anchor="middle" font-size="140" font-family="Georgia, 'Times New Roman', serif" fill="url(#gold)" font-weight="700">M</text>
+  <text x="200" y="325" text-anchor="middle" font-size="28" font-family="Georgia, 'Times New Roman', serif" fill="url(#gold)" letter-spacing="4">MUREGISCORE</text>
+</svg>

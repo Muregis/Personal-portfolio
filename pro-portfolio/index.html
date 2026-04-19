@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Victor Muregi - Full-Stack Developer & IT Tutor | React, Node.js, M-Pesa Training | Nairobi, Kenya</title>
+    <meta name="title" content="Victor Muregi - Full-Stack Developer & IT Tutor | React, Node.js, M-Pesa Training | Nairobi, Kenya">
+    <meta name="description" content="Victor Muregi - Full-Stack Developer, IT Tutor & Founder of MuregiScore Technologies. Offering web development, M-Pesa integration, and affordable IT tutoring in Nairobi. React, Node.js, PostgreSQL expert. Part-time programming tutor for students, bootcamp learners & career switchers.">
+    <meta name="keywords" content="Victor Muregi, Full-Stack Developer Kenya, IT Tutor Nairobi, Computer Science Tutor Kenya, React Developer, Node.js Developer, M-Pesa Integration, Daraja API, Software Engineer Kenya, Web Developer Nairobi, Programming Tutor, Web Development Training, Bootcamp Prep Tutor, Affordable Coding Lessons Kenya, JavaScript Tutor, Python Tutor, MuregiScore Technologies, EduCore, SaccoCore, Kiambu National Polytechnic">
+    <meta name="author" content="Victor Muregi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#3b82f6">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muregis.github.io/redesigned-personal-portfolio/">
+    <meta property="og:title" content="Victor Muregi - Full-Stack Developer | React, Node.js, M-Pesa Expert">
+    <meta property="og:description" content="Full-Stack Developer & Founder of MuregiScore Technologies. Building enterprise solutions for Africa with React, Node.js, PostgreSQL, and M-Pesa integration.">
+    <meta property="og:image" content="https://muregis.github.io/redesigned-personal-portfolio/victor-muregi.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://muregis.github.io/redesigned-personal-portfolio/">
+    <meta property="twitter:title" content="Victor Muregi - Full-Stack Developer | React, Node.js, M-Pesa Expert">
+    <meta property="twitter:description" content="Full-Stack Developer & Founder of MuregiScore Technologies. Building enterprise solutions for Africa.">
+    <meta property="twitter:image" content="https://muregis.github.io/redesigned-personal-portfolio/victor-muregi.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://muregis.github.io/redesigned-personal-portfolio/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💻</text></svg>">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Victor Muregi",
+      "jobTitle": "Full-Stack Developer",
+      "description": "Full-Stack Developer and Founder of MuregiScore Technologies, specializing in React, Node.js, PostgreSQL, and M-Pesa integration",
+      "url": "https://muregis.github.io/redesigned-personal-portfolio/",
+      "image": "https://muregis.github.io/redesigned-personal-portfolio/victor-muregi.jpg",
+      "sameAs": [
+        "https://github.com/Muregis",
+        "https://www.linkedin.com/in/victor-muregi",
+        "https://www.instagram.com/i_am.muregi"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Kiambu National Polytechnic"
+      },
+      "knowsAbout": [
+        "Full-Stack Development",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "M-Pesa Integration",
+        "Daraja API",
+        "JavaScript",
+        "TypeScript",
+        "Software Engineering",
+        "Enterprise Software"
+      ],
+      "email": "i.am.muregi@gmail.com",
+      "telephone": "+254797846126",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      }
+    }
+    </script>
+    
+    <link rel="preload" href="./styles.css" as="style">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preload" as="image" href="./assets/muregiscore-logo.png">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-left">
+                    <div class="logo">VM</div>
+                    <div class="nav-info">
+                        <h1>Victor Muregi</h1>
+                        <p>Full-Stack Developer</p>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="../first-portfolio.html" class="nav-link">Academic Portfolio</a>
+                    <a href="https://github.com/Muregis" target="_blank" class="icon-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/victor-muregi" target="_blank" class="icon-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                    <a href="#contact" class="btn-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="availability-badge">
+                        <span class="status-dot"></span>
+                        Open for Work
+                    </div>
+                    <div class="badge-group">
+                        <span class="badge badge-blue">🚀 Full-Stack Developer</span>
+                        <span class="badge badge-green">💼 Founder</span>
+                        <span class="badge badge-purple">🎓 CS Student</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="name-highlight">Victor Muregi</span>
+                    </h1>
+                    <div class="typing-container">
+                        <span class="typing-text"></span><span class="typing-cursor">|</span>
+                    </div>
+                    <p class="hero-description">
+                        <span class="highlight-word highlight-blue">Computer Science</span> student at 
+                        <span class="highlight-word highlight-purple">Kiambu National Polytechnic</span>, specializing in 
+                        <span class="highlight-word highlight-green">full-stack development</span> with 
+                        <span class="tech-highlight">React</span>, <span class="tech-highlight">Node.js</span>, and 
+                        <span class="tech-highlight">PostgreSQL</span>. Founder of 
+                        <span class="highlight-word highlight-orange">MuregiScore Technologies</span> — building 
+                        <span class="highlight-word highlight-pink">enterprise software</span> that solves real African business problems.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-large btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                            View Projects
+                        </a>
+                        <a href="https://muregis.github.io/EduCore" target="_blank" class="btn-large btn-outline">
+                            🎓 View EduCore Live
+                        </a>
+                        <a href="assets/resume.pdf" class="btn-large btn-resume" download>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="12"></line>
+                                <line x1="9" y1="15" x2="15" y2="15"></line>
+                            </svg>
+                            Download CV
+                        </a>
+                        <a href="https://github.com/Muregis" target="_blank" class="btn-large btn-outline">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            GitHub Profile
+                        </a>
+                        <a href="../first-portfolio.html" class="btn-large btn-outline">
+                            🎓 Academic Portfolio
+                        </a>
+                        <a href="https://www.linkedin.com/in/victor-muregi" target="_blank" class="btn-large btn-linkedin">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat stat-blue">
+                            <strong>15+</strong>
+                            <span>Projects Delivered</span>
+                        </div>
+                        <div class="stat stat-green">
+                            <strong>5</strong>
+                            <span>Products Built</span>
+                        </div>
+                        <div class="stat stat-purple">
+                            <strong>20+</strong>
+                            <span>Technologies</span>
+                        </div>
+                        <div class="stat stat-orange">
+                            <strong>100%</strong>
+                            <span>Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="badge">About Me</span>
+                    <h2>From Curiosity to Code</h2>
+                    <p class="lead">
+                        I'm a Computer Science student at <strong>Kiambu National Polytechnic</strong> who discovered 
+                        programming as a way to solve real problems I saw around me.
+                    </p>
+                    <p>
+                        Growing up in Kenya, I noticed how many businesses struggled with outdated systems 
+                        or couldn't afford expensive software. That frustration became my motivation — 
+                        to build modern, affordable tech solutions specifically for African businesses.
+                    </p>
+                    <p>
+                        At 20 years old, I've already built <strong>5 enterprise products</strong> used by schools, 
+                        Saccos, and businesses across Kenya. My stack is JavaScript-focused: React for 
+                        beautiful interfaces, Node.js for powerful backends, PostgreSQL for reliable data, 
+                        and the M-Pesa Daraja API for seamless payments.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <span class="icon">🎯</span>
+                            <strong>Problem-First Approach</strong>
+                            <span>I build what solves real pain points</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="icon">⚡</span>
+                            <strong>Fast Learner</strong>
+                            <span>Self-taught, always expanding skills</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="icon">🌍</span>
+                            <strong>Kenyan Roots</strong>
+                            <span>Building solutions for Africa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="journey-card">
+                        <h3>My Journey</h3>
+                        <div class="journey-item">
+                            <span class="year">2022</span>
+                            <p>Wrote my first line of code</p>
+                        </div>
+                        <div class="journey-item">
+                            <span class="year">2023</span>
+                            <p>Started CS at Kiambu National Polytechnic</p>
+                        </div>
+                        <div class="journey-item">
+                            <span class="year">2024</span>
+                            <p>Founded MuregiScore Technologies</p>
+                        </div>
+                        <div class="journey-item current">
+                            <span class="year">2025</span>
+                            <p>Building enterprise software for Africa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Featured Work</span>
+                <h2>Live Projects & Products</h2>
+                <p>Production websites and enterprise software solutions</p>
+            </div>
+
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="live">Live Sites</button>
+                <button class="filter-btn" data-filter="product">Products</button>
+                <button class="filter-btn" data-filter="development">In Development</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Sawa Solar -->
+                <article class="project-card" data-category="live">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=500&fit=crop&q=80" alt="Sawa Solar Solution">
+                        <span class="status-badge live">Live</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sawa Solar Solution</h3>
+                        <p>Professional solar energy company website with service showcase, project gallery, and contact integration.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="https://muregis.github.io/Sawa-solar--solution-website/" target="_blank" class="project-link">View Live Site →</a>
+                    </div>
+                </article>
+
+                <!-- School Website -->
+                <article class="project-card" data-category="live">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&h=500&fit=crop&q=80" alt="School Website">
+                        <span class="status-badge live">Live</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Educational Institution Website</h3>
+                        <p>Modern school website featuring academic programs, admission portal, facilities gallery, and news section.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <a href="https://muregis.github.io/School-Website/" target="_blank" class="project-link">View Live Site →</a>
+                    </div>
+                </article>
+
+                <!-- EduCore -->
+                <article class="project-card" data-category="product">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop&q=80" alt="EduCore School Management System">
+                        <span class="status-badge live">Live</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>EduCore</h3>
+                        <p>Complete school management system with student records, fee tracking, timetabling, and automated report card generation.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>PostgreSQL</span>
+                            <span>JWT</span>
+                        </div>
+                        <a href="https://muregis.github.io/EduCore" target="_blank" class="project-link">View Live Site →</a>
+                    </div>
+                </article>
+
+                <!-- SaccoCore -->
+                <article class="project-card" data-category="development">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop&q=80" alt="SaccoCore POS System">
+                        <span class="status-badge dev">In Development</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>SaccoCore</h3>
+                        <p>Flagship Sacco/Chama management platform with member management, loan processing, and M-Pesa Daraja integration.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>PostgreSQL</span>
+                            <span>M-Pesa API</span>
+                        </div>
+                        <span class="project-link disabled">In Development</span>
+                    </div>
+                </article>
+
+                <!-- ClientCore -->
+                <article class="project-card" data-category="product">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop&q=80" alt="ClientCore CRM Dashboard">
+                        <span class="status-badge live">Live</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>ClientCore</h3>
+                        <p>CRM platform with contact management, sales pipeline tracking, task automation, and analytics dashboard.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <span class="project-link disabled">Enterprise Product</span>
+                    </div>
+                </article>
+
+                <!-- Nuru AI Chatbot -->
+                <article class="project-card" data-category="development">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop&q=80" alt="Nuru AI Chatbot Interface">
+                        <span class="status-badge dev">In Development</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Nuru AI Chatbot</h3>
+                        <p>Multi-language AI chatbot supporting Kikuyu, Swahili, Kamba, and Dholuo with natural language processing.</p>
+                        <div class="tech-stack">
+                            <span>NLP</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                        </div>
+                        <span class="project-link disabled">In Development</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Work Experience</span>
+                <h2>Professional Journey</h2>
+                <p>My path from learning to building enterprise solutions</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 — Present</span>
+                        <h3>Founder & Lead Developer</h3>
+                        <h4>MuregiScore Technologies</h4>
+                        <p>Founded tech company building enterprise software. Leading product development, 
+                        client relationships, and M-Pesa integrations.</p>
+                        <div class="timeline-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>PostgreSQL</span>
+                            <span>M-Pesa API</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 — Present</span>
+                        <h3>Freelance Full-Stack Developer</h3>
+                        <h4>Self-Employed</h4>
+                        <p>Delivered 15+ projects for clients including business websites, management systems, 
+                        and e-commerce platforms.</p>
+                        <div class="timeline-tags">
+                            <span>Web Development</span>
+                            <span>API Design</span>
+                            <span>Client Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 — Present</span>
+                        <h3>Computer Science Student</h3>
+                        <h4>Kiambu National Polytechnic</h4>
+                        <p>Pursuing diploma in Computer Science. Coursework includes software engineering, 
+                        databases, networking, and system design.</p>
+                        <div class="timeline-tags">
+                            <span>Software Engineering</span>
+                            <span>Database Systems</span>
+                            <span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Technical Expertise</span>
+                <h2>Skills & Technologies</h2>
+                <p>Modern JavaScript stack with payments and production ops</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Vite</span>
+                        <span>Tailwind CSS</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>PostgreSQL</span>
+                        <span>JWT Auth</span>
+                        <span>REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Payments</h3>
+                    <div class="skill-tags">
+                        <span>M-Pesa Daraja</span>
+                        <span>STK Push</span>
+                        <span>Paystack</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DevOps & Workflow</h3>
+                    <div class="skill-tags">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>Railway</span>
+                        <span>Vercel</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-progress-section">
+                <h3 class="tech-icons-title">Proficiency Snapshot</h3>
+                <div class="progress-bars">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>React & Frontend</span>
+                            <span class="progress-percent">90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Node.js & Backend</span>
+                            <span class="progress-percent">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>M-Pesa Integration</span>
+                            <span class="progress-percent">88%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>PostgreSQL & Data</span>
+                            <span class="progress-percent">80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Visuals</span>
+                <h2>Gallery</h2>
+                <p>Recent snapshots and UI highlights</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Education</span>
+                <h2>Academic Background</h2>
+                <p>Formal learning combined with hands-on project experience</p>
+            </div>
+            
+            <div class="education-grid">
+                <div class="education-card main">
+                    <div class="school-icon">🎓</div>
+                    <h3>Kiambu National Polytechnic</h3>
+                    <h4>Diploma in Computer Science</h4>
+                    <span class="duration">2023 — Present (Expected 2026)</span>
+                    <p>Comprehensive computer science program covering software development, 
+                    database management, networking, and system administration.</p>
+                    
+                    <div class="coursework">
+                        <h5>Key Coursework:</h5>
+                        <div class="course-tags">
+                            <span>Programming</span>
+                            <span>Data Structures</span>
+                            <span>Database Systems</span>
+                            <span>Software Engineering</span>
+                            <span>Web Development</span>
+                            <span>Computer Networks</span>
+                            <span>System Analysis</span>
+                            <span>IT Project Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-card secondary">
+                    <div class="cert-grid">
+                        <div class="cert-item">
+                            <span class="cert-icon">📜</span>
+                            <h5>Self-Taught Developer</h5>
+                            <p>Continuous learning through documentation, open-source, and building real projects</p>
+                        </div>
+                        <div class="cert-item">
+                            <span class="cert-icon">🏆</span>
+                            <h5>Project-Based Learning</h5>
+                            <p>Learned by building 15+ production applications for real clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MuregiScore Showcase -->
+    <section id="muregiscore" class="muregiscore-showcase">
+        <div class="container">
+            <div class="showcase-header">
+                <div class="company-logo">MS</div>
+                <h2>MuregiScore Technologies</h2>
+                <p class="tagline">"Scoring Solutions, Empowering Africa"</p>
+                <p class="description">Enterprise software company I founded to bring modern, 
+                affordable tech solutions to African businesses.</p>
+            </div>
+            
+            <div class="showcase-stats">
+                <div class="showcase-stat">
+                    <strong>5</strong>
+                    <span>Products Built</span>
+                </div>
+                <div class="showcase-stat">
+                    <strong>10+</strong>
+                    <span>Business Clients</span>
+                </div>
+                <div class="showcase-stat">
+                    <strong>100%</strong>
+                    <span>African-Focused</span>
+                </div>
+            </div>
+            
+            <div class="showcase-products">
+                <h3>Flagship Products</h3>
+                <div class="product-showcase-grid">
+                    <div class="product-showcase">
+                        <div class="product-icon-large">🎓</div>
+                        <h4>EduCore</h4>
+                        <p>School management system transforming how Kenyan schools handle 
+                        student records, fees, and academics.</p>
+                    </div>
+                    <div class="product-showcase">
+                        <div class="product-icon-large">📈</div>
+                        <h4>SaccoCore</h4>
+                        <p>M-Pesa integrated platform for savings groups and Saccos, 
+                        handling millions in member transactions.</p>
+                    </div>
+                    <div class="product-showcase">
+                        <div class="product-icon-large">💼</div>
+                        <h4>ClientCore</h4>
+                        <p>CRM built for African sales teams with offline capability 
+                        and mobile-first design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Client Feedback</span>
+                <h2>What Clients Say</h2>
+            </div>
+
+            <div class="testimonials-carousel">
+                <button class="carousel-nav prev" aria-label="Previous testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div class="testimonials-track">
+                    <div class="testimonial active">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"EduCore has completely transformed how we manage our school. Student records, fee tracking, and report generation are now seamless."</p>
+                        <div class="author">
+                            <strong>Jane Kamau</strong>
+                            <span>School Administrator</span>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"The M-Pesa integration works flawlessly. Our members can now track their savings and loans in real-time. Highly professional!"</p>
+                        <div class="author">
+                            <strong>Peter Mwangi</strong>
+                            <span>Sacco Chairperson</span>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Sawa Solar Solution website has brought us so many leads! Victor understood our business perfectly."</p>
+                        <div class="author">
+                            <strong>David Kipchoge</strong>
+                            <span>Solar Company CEO</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav next" aria-label="Next testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">FAQ</span>
+                <h2>Common Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What’s your core stack?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>React + TypeScript on the front, Node.js/Express + PostgreSQL on the back, and M-Pesa Daraja for payments. Tooling: Vite, Tailwind, GitHub, Railway/Vercel.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long do projects take?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Brochure sites: ~1–2 weeks. Full web apps (auth, DB, payments): 4–6 weeks. Enterprise suites like EduCore/SaccoCore: 2–3 months with phased releases.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you handle support and updates?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes—ongoing maintenance packages include security patches, bug fixes, feature tweaks, and uptime monitoring.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can you integrate payments?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. I build M-Pesa STK Push/C2B/B2C flows, plus Paystack or card rails when needed, with callbacks and transaction verification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- M-Pesa Demo -->
+    <section class="mpesa-demo">
+        <div class="container">
+            <div class="demo-content">
+                <span class="badge">Live M-Pesa Integration Demo</span>
+                <h2>See M-Pesa STK Push in Action</h2>
+                <p>Try my Daraja API implementation. Buy me a coffee and watch the automated payment flow!</p>
+                <button class="btn-demo" id="mpesaBtn">
+                    ☕ Try M-Pesa Demo
+                </button>
+                <p class="demo-note">Powered by Safaricom Daraja API · Real-time STK Push</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Let's Work Together</h2>
+                <p>Available for freelance projects, collaborations, and full-time opportunities.</p>
+                
+                <div class="contact-grid">
+                    <a href="https://wa.me/254797846126" class="contact-card whatsapp">
+                        <div class="icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <p>+254 797 846 126</p>
+                    </a>
+
+                    <a href="mailto:i.am.muregi@gmail.com" class="contact-card email">
+                        <div class="icon">📧</div>
+                        <h3>Email</h3>
+                        <p>i.am.muregi@gmail.com</p>
+                    </a>
+
+                    <a href="https://github.com/Muregis" target="_blank" class="contact-card github">
+                        <div class="icon">💻</div>
+                        <h3>GitHub</h3>
+                        <p>@Muregis</p>
+                    </a>
+
+                    <a href="../first-portfolio.html" class="contact-card email">
+                        <div class="icon">🎓</div>
+                        <h3>Academic Portfolio</h3>
+                        <p>View first portfolio</p>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/victor-muregi" target="_blank" class="contact-card linkedin">
+                        <div class="icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <p>Victor Muregi</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- M-Pesa Modal -->
+    <div class="modal" id="mpesaModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            
+            <div class="modal-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/M-PESA_LOGO-01.svg" alt="M-Pesa" class="mpesa-logo">
+                <h3>M-Pesa STK Push Demo</h3>
+                <p>See Daraja API integration in action</p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phoneInput" placeholder="0712345678" maxlength="10">
+                    <small>Kenyan number starting with 07 or 01</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Amount (KES)</label>
+                    <input type="number" id="amountInput" placeholder="50" min="10" value="50">
+                    <small>Minimum KES 10</small>
+                </div>
+                
+                <button class="btn-send" id="sendBtn">
+                    Send Payment Prompt
+                </button>
+                
+                <div class="divider">or</div>
+                
+                <div class="manual-payment">
+                    <h4>Manual Payment</h4>
+                    <div class="payment-option">
+                        <strong>Till Number:</strong>
+                        <div class="payment-code">
+                            <span id="tillCode">5159614</span>
+                            <button class="copy-btn" data-copy="5159614">Copy</button>
+                        </div>
+                    </div>
+                    <div class="payment-option">
+                        <strong>Phone:</strong>
+                        <div class="payment-code">
+                            <span id="phoneCode">0797846126</span>
+                            <button class="copy-btn" data-copy="0797846126">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-note">
+                    <small>💡 This is a live demo of M-Pesa Daraja API integration with STK Push, callback handling, and transaction verification.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Victor Muregi - MuregiScore Technologies</p>
+                <p class="tagline">"Scoring Solutions, Empowering Africa"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
+
