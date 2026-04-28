@@ -367,6 +367,7 @@ body {
 .tag-linux { background: #fcc624; color: #333; }
 .tag-windows { background: #00a4ef; }
 .tag-git { background: #f05032; }
+.tag-cplusplus { background: #f34b7d; }
 
 /* Repository Section */
 .repository {

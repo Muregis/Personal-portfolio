@@ -34,11 +34,11 @@ if (themeToggle) {
 const typingText = document.querySelector('.typing-text');
 if (typingText) {
     const phrases = [
-        'Building Solutions for Africa',
-        'Full-Stack Developer',
-        'Founder of MuregiScore Technologies',
-        'React & Node.js Expert',
-        'M-Pesa Integration Specialist'
+        'Built 5 Enterprise Products for Kenyan Businesses',
+        'Processing KES 1M+ Monthly via M-Pesa Integrations',
+        'Reducing School Admin Time by 70% with EduCore',
+        'Full-Stack Developer | React & Node.js Expert',
+        'M-Pesa Integration Specialist | Daraja API'
     ];
     
     let phraseIndex = 0;
@@ -118,11 +118,25 @@ const modal = document.getElementById('mpesaModal');
 const mpesaBtn = document.getElementById('mpesaBtn');
 const modalClose = document.getElementById('modalClose');
 const modalOverlay = document.querySelector('#mpesaModal .modal-overlay');
+const sendBtn = document.getElementById('sendBtn');
+const phoneInput = document.getElementById('phoneInput');
+const amountInput = document.getElementById('amountInput');
+let previouslyFocusedElement = null;
 
 if (mpesaBtn) {
     mpesaBtn.addEventListener('click', () => {
+        // Store previously focused element for return focus
+        previouslyFocusedElement = document.activeElement;
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        // Focus on first input when modal opens
+        setTimeout(() => {
+            phoneInput.focus();
+        }, 100);
+        // Add ARIA attributes for accessibility
+        modal.setAttribute('aria-modal', 'true');
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-labelledby', 'mpesaModalLabel');
     });
 }
 
@@ -138,13 +152,143 @@ function closeModal() {
     if (!modal) return;
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    // Return focus to the element that opened the modal
+    if (previouslyFocusedElement) {
+        previouslyFocusedElement.focus();
+    }
+    // Remove ARIA attributes
+    modal.removeAttribute('aria-modal');
+    modal.removeAttribute('role');
+    modal.removeAttribute('aria-labelledby');
+}
+
+// Add form validation to M-Pesa modal
+if (sendBtn) {
+    sendBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const phone = phoneInput.value.trim();
+        const amount = parseInt(amountInput.value);
+        
+        // Validate phone number (Kenyan format)
+        const phoneRegex = /^(07|01)\d{8}$/;
+        if (!phoneRegex.test(phone)) {
+            showError(phoneInput, 'Please enter a valid Kenyan phone number (07XXXXXXXX or 01XXXXXXXX)');
+            return;
+        }
+        
+        // Validate amount
+        if (isNaN(amount) || amount < 10) {
+            showError(amountInput, 'Please enter an amount of at least KES 10');
+            return;
+        }
+        
+        // Clear errors
+        clearError(phoneInput);
+        clearError(amountInput);
+        
+        // Here you would typically make the API call to your backend
+        // For demo purposes, we'll simulate success
+        simulateStkPush(phone, amount);
+    });
+}
+
+// Helper functions for form validation
+function showError(inputElement, message) {
+    const formGroup = inputElement.parentElement;
+    // Remove any existing error
+    clearError(inputElement);
+    
+    // Create error element
+    const errorElement = document.createElement('small');
+    errorElement.className = 'error-message';
+    errorElement.style.color = '#ef4444';
+    errorElement.style.fontSize = '0.75rem';
+    errorElement.style.display = 'block';
+    errorElement.style.marginTop = '0.25rem';
+    errorElement.textContent = message;
+    
+    // Add error styling to input
+    inputElement.style.borderColor = '#ef4444';
+    inputElement.style.boxShadow = '0 0 0 2px rgba(239, 68, 68, 0.2)';
+    
+    // Append error message
+    formGroup.appendChild(errorElement);
+}
+
+function clearError(inputElement) {
+    const formGroup = inputElement.parentElement;
+    const existingError = formGroup.querySelector('.error-message');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    // Reset input styling
+    inputElement.style.borderColor = '';
+    inputElement.style.boxShadow = '';
+}
+
+// Enhanced modal close functionality with escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+        closeModal();
+    }
+    
+    // Trap focus inside modal
+    if (e.key === 'Tab' && modal && modal.classList.contains('active')) {
+        trapFocus(modal, e);
+    }
+});
+
+// Focus trapping function for modal accessibility
+function trapFocus(modalElement, event) {
+    const focusableElements = modalElement.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    
+    if (event.shiftKey) { // Shift + Tab
+        if (document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+        }
+    } else { // Tab
+        if (document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+        }
+    }
+}
+
+// Simulate STK Push for demo (replace with actual API call in production)
+function simulateStkPush(phone, amount) {
+    // Show success message
+    const modalBody = document.querySelector('#mpesaModal .modal-body');
+    const originalContent = modalBody.innerHTML;
+    
+    modalBody.innerHTML = `
+        <div class="success-message" style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+            <h3>Payment Successful!</h3>
+            <p>KES ${amount} sent to ${phone}</p>
+            <p><small>Transaction ID: MP${Date.now().toString().slice(-6)}</small></p>
+            <button class="btn-send" style="margin-top: 1.5rem;" onclick="location.reload()">Close</button>
+        </div>
+    `;
+    
+    // Auto-close after 3 seconds
+    setTimeout(() => {
+        modalBody.innerHTML = originalContent;
+        closeModal();
+    }, 3000);
 }
 
 // Copy to clipboard
 document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const type = this.dataset.copy;
-        const text = type === 'till' ? '5159614' : '+254797846126';
+        const text = type === 'till' ? '5758809' : '+254797846126';
         
         navigator.clipboard.writeText(text).then(() => {
             const originalHTML = this.innerHTML;

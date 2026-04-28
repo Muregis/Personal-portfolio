@@ -56,18 +56,21 @@
         "@type": "EducationalOrganization",
         "name": "Kiambu National Polytechnic"
       },
-      "knowsAbout": [
-        "Full-Stack Development",
-        "React",
-        "Node.js",
-        "PostgreSQL",
-        "M-Pesa Integration",
-        "Daraja API",
-        "JavaScript",
-        "TypeScript",
-        "Software Engineering",
-        "Enterprise Software"
-      ],
+       "knowsAbout": [
+         "Full-Stack Development",
+         "React",
+         "Node.js",
+         "PostgreSQL",
+         "M-Pesa Integration",
+         "Daraja API",
+         "JavaScript",
+         "TypeScript",
+         "Java",
+         "Python",
+         "C++",
+         "Software Engineering",
+         "Enterprise Software"
+       ],
       "email": "i.am.muregi@gmail.com",
       "telephone": "+254797846126",
       "address": {
@@ -75,12 +78,98 @@
         "addressLocality": "Nairobi",
         "addressCountry": "KE"
       }
-    }
-    </script>
-    
-    <link rel="preload" href="./styles.css" as="style">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preload" as="image" href="./assets/muregiscore-logo.png">
+     }
+     </script>
+     <!-- JobPosting Schema for Available Work -->
+     <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "JobPosting",
+       "title": "Full-Stack Developer",
+       "description": "Experienced full-stack developer specializing in React, Node.js, PostgreSQL, and M-Pesa integration. Available for freelance projects, collaborations, and full-time opportunities.",
+       "identifier": {
+         "@type": "PropertyValue",
+         "name": "Victor Muregi",
+         "value": "i.am.muregi@gmail.com"
+       },
+       "datePosted": "2026-04-28",
+       "validThrough": "2026-12-31",
+       "employmentType": "CONTRACTOR",
+       "hiringOrganization": {
+         "@type": "Organization",
+         "name": "MuregiScore Technologies",
+         "sameAs": "https://muregis.github.io/redesigned-personal-portfolio/",
+         "logo": "https://muregis.github.io/redesigned-personal-portfolio/assets/muregiscore-logo.png"
+       },
+       "jobLocation": {
+         "@type": "Place",
+         "address": {
+           "@type": "PostalAddress",
+           "addressLocality": "Nairobi",
+           "addressCountry": "KE"
+         }
+       },
+       "baseSalary": {
+         "@type": "MonetaryAmount",
+         "currency": "KES",
+         "value": {
+           "@type": "QuantitativeValue",
+           "value": 1500,
+           "unitText": "PER_HOUR",
+           "minValue": 1000,
+           "maxValue": 2500
+         }
+       },
+        "skills": [
+          "React",
+          "Node.js",
+          "PostgreSQL",
+          "M-Pesa Daraja API",
+          "JavaScript",
+          "TypeScript",
+          "Java",
+          "Python",
+          "C++",
+          "REST API Design",
+          "Responsive Design",
+          "Database Architecture"
+        ],
+       "experienceRequirements": {
+         "@type": "OccupationalExperienceRequirements",
+         "monthsOfExperience": 36
+       }
+     }
+     </script>
+     
+     <!-- Application Schema for Products -->
+     <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "SoftwareApplication",
+       "name": "EduCore School Management System",
+       "applicationCategory": "BusinessApplication",
+       "operatingSystem": "Web-based",
+       "offers": {
+         "@type": "Offer",
+         "price": "0",
+         "priceCurrency": "KES",
+         "availability": "https://schema.org/InStock",
+         "url": "https://muregis.github.io/EduCore"
+       },
+       "features": [
+         "Student Records Management",
+         "Fee Tracking & Payment Processing",
+         "Timetabling & Scheduling",
+         "Automated Report Card Generation",
+         "Teacher & Staff Management"
+       ],
+       "screenshot": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop&q=80"
+     }
+     </script>
+     
+     <link rel="preload" href="./styles.css" as="style">
+     <link rel="stylesheet" href="./styles.css">
+     <link rel="preload" as="image" href="./assets/muregiscore-logo.png">
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -254,7 +343,7 @@
                         At 20 years old, I've already built <strong>5 enterprise products</strong> used by schools, 
                         Saccos, and businesses across Kenya. My stack is JavaScript-focused: React for 
                         beautiful interfaces, Node.js for powerful backends, PostgreSQL for reliable data, 
-                        and the M-Pesa Daraja API for seamless payments.
+                         and the M-Pesa Daraja API for seamless payments, alongside proficiency in Java, Python, and C++.
                     </p>
                     <div class="about-highlights">
                         <div class="highlight">
@@ -533,58 +622,96 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3>DevOps & Workflow</h3>
-                    <div class="skill-tags">
-                        <span>Git</span>
-                        <span>GitHub</span>
-                        <span>Railway</span>
-                        <span>Vercel</span>
-                    </div>
-                </div>
+                 <div class="skill-category">
+                     <h3>DevOps & Workflow</h3>
+                     <div class="skill-tags">
+                         <span>Git</span>
+                         <span>GitHub</span>
+                         <span>Railway</span>
+                         <span>Vercel</span>
+                     </div>
+                 </div>
+
+                 <div class="skill-category">
+                     <h3>Programming Languages</h3>
+                     <div class="skill-tags">
+                         <span>Java</span>
+                         <span>Python</span>
+                         <span>C++</span>
+                         <span>JavaScript</span>
+                         <span>TypeScript</span>
+                     </div>
+                 </div>
             </div>
 
-            <div class="skills-progress-section">
-                <h3 class="tech-icons-title">Proficiency Snapshot</h3>
-                <div class="progress-bars">
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>React & Frontend</span>
-                            <span class="progress-percent">90%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>Node.js & Backend</span>
-                            <span class="progress-percent">85%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-width="85"></div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>M-Pesa Integration</span>
-                            <span class="progress-percent">88%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-width="88"></div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-header">
-                            <span>PostgreSQL & Data</span>
-                            <span class="progress-percent">80%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-width="80"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+             <div class="skills-progress-section">
+                 <h3 class="tech-icons-title">Proficiency Snapshot</h3>
+                 <div class="progress-bars">
+                     <div class="progress-item">
+                         <div class="progress-header">
+                             <span>React & Frontend</span>
+                             <span class="progress-percent">90%</span>
+                         </div>
+                         <div class="progress-bar">
+                             <div class="progress-fill" data-width="90"></div>
+                         </div>
+                     </div>
+                     <div class="progress-item">
+                         <div class="progress-header">
+                             <span>Node.js & Backend</span>
+                             <span class="progress-percent">85%</span>
+                         </div>
+                         <div class="progress-bar">
+                             <div class="progress-fill" data-width="85"></div>
+                         </div>
+                     </div>
+                     <div class="progress-item">
+                         <div class="progress-header">
+                             <span>M-Pesa Integration</span>
+                             <span class="progress-percent">88%</span>
+                         </div>
+                         <div class="progress-bar">
+                             <div class="progress-fill" data-width="88"></div>
+                         </div>
+                     </div>
+                     <div class="progress-item">
+                         <div class="progress-header">
+                             <span>PostgreSQL & Data</span>
+                             <span class="progress-percent">80%</span>
+                         </div>
+                         <div class="progress-bar">
+                             <div class="progress-fill" data-width="80"></div>
+                         </div>
+                     </div>
+                     <div class="progress-item">
+                         <div class="progress-header">
+                             <span>Java</span>
+                             <span class="progress-percent">75%</span>
+                         </div>
+                         <div class="progress-bar">
+                             <div class="progress-fill" data-width="75"></div>
+                         </div>
+                     </div>
+                     <div class="progress-item">
+                         <div class="progress-header">
+                             <span>Python</span>
+                             <span class="progress-percent">70%</span>
+                         </div>
+                         <div class="progress-bar">
+                             <div class="progress-fill" data-width="70"></div>
+                         </div>
+                     </div>
+                     <div class="progress-item">
+                         <div class="progress-header">
+                             <span>C++</span>
+                             <span class="progress-percent">65%</span>
+                         </div>
+                         <div class="progress-bar">
+                             <div class="progress-fill" data-width="65"></div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
         </div>
     </section>
 
@@ -894,8 +1021,8 @@
                     <div class="payment-option">
                         <strong>Till Number:</strong>
                         <div class="payment-code">
-                            <span id="tillCode">5159614</span>
-                            <button class="copy-btn" data-copy="5159614">Copy</button>
+                            <span id="tillCode">5758809</span>
+                            <button class="copy-btn" data-copy="5758809">Copy</button>
                         </div>
                     </div>
                     <div class="payment-option">
