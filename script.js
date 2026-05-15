@@ -538,3 +538,4 @@ faqItems.forEach(item => {
         }
     });
 });
+

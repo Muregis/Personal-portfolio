@@ -169,3 +169,59 @@ document.querySelectorAll('img[data-src]').forEach(img => {
 console.log('%c👋 Hey there, curious developer!', 'font-size: 20px; font-weight: bold; color: #2563eb;');
 console.log('%cWelcome to Victor Muregi\'s Portfolio', 'font-size: 14px; color: #666;');
 console.log('%cFeel free to explore the code and reach out if you have any questions!', 'font-size: 12px; color: #999;');
+
+// Antigravity Dots Cursor Animation
+const DOT_COUNT = 24;
+const dots = [];
+const colors = ['#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'];
+
+for (let i = 0; i < DOT_COUNT; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot-cursor';
+    // Assign a gradient color sequence
+    dot.style.backgroundColor = colors[i % colors.length];
+    document.body.appendChild(dot);
+    dots.push(dot);
+}
+
+const positions = new Array(DOT_COUNT).fill({x: window.innerWidth / 2, y: window.innerHeight / 2});
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+
+window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateDots() {
+    positions[0] = {x: mouseX, y: mouseY};
+    
+    for (let i = 1; i < DOT_COUNT; i++) {
+        const prev = positions[i - 1];
+        const cur = positions[i];
+        // The closer to the cursor, the faster it tracks (spring effect)
+        const lerp = 0.35 - (i * 0.01);
+        positions[i] = {
+            x: cur.x + (prev.x - cur.x) * Math.max(0.05, lerp),
+            y: cur.y + (prev.y - cur.y) * Math.max(0.05, lerp)
+        };
+    }
+    
+    for (let i = 0; i < DOT_COUNT; i++) {
+        const {x, y} = positions[i];
+        const scale = 1 - (i / DOT_COUNT) * 0.7; // Scale down smoothly
+        const opacity = 1 - (i / DOT_COUNT);
+        // Translate -50% to center the dot on the cursor
+        dots[i].style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%)) scale(${scale})`;
+        dots[i].style.opacity = opacity;
+    }
+    requestAnimationFrame(animateDots);
+}
+animateDots();
+
+// Apply Typing Effect to Hero Subtitle
+const subtitle = document.querySelector('.hero-subtitle');
+if (subtitle) {
+    const originalText = subtitle.textContent;
+    typeWriter(subtitle, originalText, 50);
+}
