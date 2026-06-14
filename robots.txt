@@ -1,0 +1,38 @@
+# robots.txt for Victor Muregi Portfolio
+# Last Updated: May 26, 2026
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /diagrams.png
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Crawl delay (in seconds) - be respectful to servers
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://victormuregi.dev/sitemap.xml
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
