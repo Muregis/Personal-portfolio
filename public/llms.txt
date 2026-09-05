@@ -1,0 +1,25 @@
+# Victor Muregi
+
+> Full-stack developer and founder in Nairobi, Kenya building enterprise software for African businesses — React, Node.js, PostgreSQL, and M-Pesa Daraja API integrations. Founder of MuregiScore Technologies.
+
+## Pages
+
+- [Home](https://victormuregi.dev/): Professional portfolio — projects (EduCore, StockCore, ClientCore, Sawa Solar), experience, skills, education, client feedback, FAQ, and contact.
+- [Academic Portfolio](https://victormuregi.dev/academic): Computer Science coursework and focus areas at Kiambu National Polytechnic.
+
+## Key facts
+
+- Name: Victor Muregi
+- Role: Full-Stack Developer; Founder & Lead Developer, MuregiScore Technologies
+- Location: Nairobi, Kenya
+- Education: Diploma in Computer Science, Kiambu National Polytechnic (2023 – present, expected 2026)
+- Focus: M-Pesa Daraja (STK Push, C2B, B2C), school management systems, financial reporting, inventory & CRM platforms, AI chatbots for local languages
+- Stack: React, TypeScript, Node.js, Express, PostgreSQL, Java, Python, C++, HTML/CSS, Tailwind CSS
+
+## Contact
+
+- Email: i.am.muregi@gmail.com
+- WhatsApp: +254 797 846 126 (https://wa.me/254797846126)
+- GitHub: https://github.com/Muregis
+- LinkedIn: https://www.linkedin.com/in/victor-muregi
+- Instagram: https://www.instagram.com/i_am.muregi

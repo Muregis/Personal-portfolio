@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Analytics } from "@/components/analytics/ga";
+import { siteMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Victor Muregi | Full-Stack Developer",
-  description:
-    "Full-stack developer portfolio for Victor Muregi featuring React, Node.js, PostgreSQL, M-Pesa integrations, and product work across Africa."
+export const metadata: Metadata = siteMetadata;
+
+export const viewport: Viewport = {
+  themeColor: "#020617",
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "dark"
 };
 
 export default function RootLayout({
@@ -13,9 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>{children}</body>
+    <html lang="en">
+      <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-cyan-300 focus:px-5 focus:py-2.5 focus:font-semibold focus:text-slate-950"
+        >
+          Skip to content
+        </a>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
-

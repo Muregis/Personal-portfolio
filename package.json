@@ -1,14 +1,19 @@
 {
-  "name": "pro-portfolio",
+  "name": "victor-muregi-portfolio",
   "version": "1.0.0",
   "private": true,
+  "description": "Production portfolio for Victor Muregi — full-stack developer & founder of MuregiScore Technologies.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "assets": "node scripts/generate-assets.mjs",
+    "assets:splash": "node scripts/fetch-splash-images.mjs"
   },
   "dependencies": {
+    "@sentry/nextjs": "^10.73.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.511.0",
@@ -25,8 +30,8 @@
     "@types/react-dom": "^19.2.2",
     "eslint": "^9.37.0",
     "eslint-config-next": "^16.0.0",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.3"
   }
 }
-
