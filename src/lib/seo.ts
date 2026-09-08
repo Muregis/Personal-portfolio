@@ -11,7 +11,7 @@ export const shareImage = {
 };
 
 const description =
-  "Full-stack developer and founder in Nairobi, Kenya building enterprise software for African businesses — React, Node.js, PostgreSQL and M-Pesa Daraja integrations.";
+  "Full-stack developer and founder in Nairobi, Kenya building web software for Kenyan schools and businesses — React, Node.js, PostgreSQL, and M-Pesa Daraja integrations.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -26,10 +26,10 @@ export const siteMetadata: Metadata = {
   keywords: [
     "Victor Muregi",
     "full-stack developer Kenya",
+    "web developer Nairobi",
     "M-Pesa integration developer",
     "React developer Nairobi",
     "MuregiScore Technologies",
-    "software engineer Africa",
     "school management system Kenya"
   ],
   alternates: {

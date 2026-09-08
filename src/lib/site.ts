@@ -8,10 +8,14 @@
 export const site = {
   name: "Victor Muregi",
   brand: "MuregiScore Technologies",
-  tagline: "Scoring Solutions, Empowering Africa",
+  tagline: "Web software for Kenyan schools & businesses",
   role: "Full-Stack Developer",
   location: "Nairobi, Kenya",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://victormuregi.dev",
+  // Stable public deployment. Override per environment with NEXT_PUBLIC_SITE_URL
+  // (Vercel project env) once a custom domain is attached.
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://personal-portfolio-muregis-projects.vercel.app",
   email: "i.am.muregi@gmail.com",
   phoneDisplay: "+254 797 846 126",
   phoneE164: "+254797846126",
@@ -56,11 +60,11 @@ export const nav = {
 
 /** Rotating headline phrases (hero). */
 export const roles = [
-  "Building solutions for Africa",
-  "Full-stack developer · Java · Python · C++ · React",
+  "Building web software for Kenyan schools & businesses",
+  "Full-stack developer · React · Node.js · PostgreSQL",
   "Founder of MuregiScore Technologies",
   "M-Pesa Daraja integration specialist",
-  "Computer science student, Kiambu National Polytechnic"
+  "Computer Science student at Kiambu National Polytechnic"
 ];
 
 export interface Project {
@@ -81,11 +85,11 @@ export const projects: Project[] = [
     title: "EduCore",
     tag: "School Management",
     summary:
-      "Complete school management system with student records, fee tracking, timetabling, and automated report-card generation.",
+      "School management system with student records, fee tracking, timetabling, and automated report-card generation — my flagship product at MuregiScore.",
     stack: ["React", "Node.js", "PostgreSQL", "JWT"],
     status: "Live",
-    href: "https://muregis.github.io/EduCore",
-    hrefLabel: "View live product",
+    href: "https://github.com/Muregis/educore-school-management-system",
+    hrefLabel: "View source on GitHub",
     accent: "from-cyan-400/80 via-sky-500/70 to-blue-600/80",
     imageAlt:
       "A stack of school textbooks with an apple, representing EduCore's school-management work."
@@ -120,8 +124,8 @@ export const projects: Project[] = [
     title: "StockCore",
     tag: "Inventory Intelligence",
     summary:
-      "Inventory and stock-intelligence platform focused on item visibility, movement tracking, reorder alerts, and business insights.",
-    stack: ["React", "Node.js", "PostgreSQL", "Analytics"],
+      "Inventory and stock-tracking platform for small businesses — item visibility, movement tracking, reorder alerts, and simple insights.",
+    stack: ["React", "Node.js", "PostgreSQL"],
     status: "In Development",
     accent: "from-violet-400/80 via-purple-500/70 to-indigo-700/80",
     imageAlt:
@@ -131,18 +135,18 @@ export const projects: Project[] = [
     title: "ClientCore",
     tag: "CRM Platform",
     summary:
-      "CRM platform with contact management, sales-pipeline tracking, task automation, and an analytics dashboard.",
+      "CRM platform in development — contact management, sales-pipeline tracking, task automation, and a reporting dashboard.",
     stack: ["React", "Node.js", "PostgreSQL"],
-    status: "Enterprise",
+    status: "In Development",
     accent: "from-sky-300/80 via-blue-500/70 to-indigo-600/80",
     imageAlt:
       "A business team meeting around a table, representing the ClientCore CRM platform."
   },
   {
     title: "Nuru AI Chatbot",
-    tag: "NLP Assistant",
+    tag: "NLP Experiment",
     summary:
-      "Multi-language AI chatbot supporting Kikuyu, Swahili, Kamba, and Dholuo built on local natural-language processing.",
+      "Research project exploring a chatbot for Kikuyu, Swahili, Kamba, and Dholuo with local-language natural-language processing.",
     stack: ["NLP", "React", "Node.js"],
     status: "In Development",
     accent: "from-fuchsia-400/80 via-pink-500/70 to-rose-700/80",
@@ -153,16 +157,16 @@ export const projects: Project[] = [
 
 export const stats = [
   { value: "15+", label: "Projects delivered" },
-  { value: "5", label: "Production products" },
-  { value: "20+", label: "Technologies" },
-  { value: "6+", label: "Programming languages" }
+  { value: "4+", label: "Years building software" },
+  { value: "6+", label: "Programming languages" },
+  { value: "20+", label: "Technologies used" }
 ];
 
 export const journey = [
   { year: "2022", event: "Wrote my first line of code (Python)" },
   { year: "2023", event: "Started Computer Science at Kiambu National Polytechnic" },
   { year: "2024", event: "Founded MuregiScore Technologies" },
-  { year: "2025", event: "Shipped enterprise software for Kenyan schools & Saccos" }
+  { year: "2025", event: "Released EduCore & client websites for Kenyan schools and businesses" }
 ];
 
 export const values = [
@@ -205,7 +209,7 @@ export const timeline: TimelineItem[] = [
     role: "Freelance Full-Stack Developer",
     company: "Self-employed",
     description:
-      "Delivered 15+ client projects — business websites, management systems, and e-commerce platforms — from requirements to deployment.",
+      "Delivered 15+ client projects — business websites, dashboards, and management systems — from requirements to deployment.",
     tags: ["Web Development", "API Design", "Client Management"]
   },
   {
@@ -241,25 +245,27 @@ export const skillGroups = [
   }
 ];
 
+/** Day-to-day stack (shown as chips — deliberately no self-graded percentages). */
 export const proficiency = [
-  { label: "React & frontend", value: 90 },
-  { label: "Node.js & backend", value: 85 },
-  { label: "M-Pesa integration", value: 88 },
-  { label: "PostgreSQL & data", value: 80 }
+  "React + TypeScript frontends",
+  "Node.js + Express APIs",
+  "PostgreSQL data & SQL",
+  "M-Pesa Daraja payments",
+  "Tailwind CSS + responsive design"
 ];
 
 export const products = [
   {
     name: "EduCore",
-    text: "School management system transforming how Kenyan schools handle student records, fees, and academics."
+    text: "School management — student records, fee tracking, timetables, automated report cards. My flagship product."
   },
   {
     name: "StockCore",
-    text: "Inventory and stock-focused business platform, currently in development."
+    text: "Inventory and stock-tracking platform for small businesses — in development."
   },
   {
     name: "ClientCore",
-    text: "CRM built for practical business workflows and sales execution."
+    text: "CRM for practical sales workflows — in development."
   }
 ];
 
@@ -279,26 +285,16 @@ export const education = {
   ]
 };
 
-export const testimonials = [
-  {
-    quote:
-      "EduCore has completely transformed how we manage our school. Student records, fee tracking, and report generation are now seamless.",
-    name: "Jane Kamau",
-    role: "School Administrator"
-  },
-  {
-    quote:
-      "The M-Pesa integration works flawlessly. Our members can now track savings and loans in real time. Highly professional.",
-    name: "Peter Mwangi",
-    role: "Sacco Chairperson"
-  },
-  {
-    quote:
-      "The Sawa Solar website brought us so many qualified leads. Victor understood our business perfectly.",
-    name: "David Kipchoge",
-    role: "Solar Company CEO"
-  }
-];
+/**
+ * Testimonials render only when populated. Only add REAL clients with their
+ * permission, and include a verifiable company/role — e.g.:
+ * { quote, name: "Jane Kamau", role: "Administrator, Greenfield Academy — Nairobi" }
+ */
+export const testimonials: {
+  quote: string;
+  name: string;
+  role: string;
+}[] = [];
 
 export const faqs = [
   {

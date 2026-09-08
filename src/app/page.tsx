@@ -6,7 +6,6 @@ import {
   Code2,
   CreditCard,
   Download,
-  ExternalLink,
   Github,
   GraduationCap,
   LayoutDashboard,
@@ -17,8 +16,7 @@ import {
   Rocket,
   ShieldCheck,
   Sparkles,
-  Star,
-  WalletCards
+  Star
 } from "lucide-react";
 import { SiteHeader } from "@/components/chrome/site-header";
 import { SiteFooter } from "@/components/chrome/site-footer";
@@ -27,7 +25,6 @@ import { RoleRotator } from "@/components/interactive/role-rotator";
 import { ProjectGrid } from "@/components/interactive/project-grid";
 import { TestimonialBlock } from "@/components/interactive/testimonial-block";
 import { FaqBlock } from "@/components/interactive/faq-block";
-import { PaymentsSupport } from "@/components/interactive/payments-support";
 import {
   site,
   nav,
@@ -38,7 +35,8 @@ import {
   skillGroups,
   proficiency,
   products,
-  education
+  education,
+  testimonials
 } from "@/lib/site";
 import {
   personSchema,
@@ -180,18 +178,13 @@ export default function HomePage() {
                 </h1>
                 <RoleRotator />
                 <p className="max-w-3xl text-lg leading-8 text-slate-300">
-                  Full-stack developer and founder at{" "}
-                  <a
-                    href={site.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-white underline decoration-cyan-300/60 underline-offset-4 transition-colors hover:text-cyan-200"
-                  >
+                  Full-stack developer and founder of{" "}
+                  <span className="font-semibold text-white underline decoration-cyan-300/60 underline-offset-4">
                     MuregiScore Technologies
-                  </a>{" "}
-                  — building enterprise software for African businesses with React,
-                  Node.js, PostgreSQL, and M-Pesa Daraja integrations. Studying
-                  Computer Science at Kiambu National Polytechnic.
+                  </span>{" "}
+                  — building web software for Kenyan schools and businesses with
+                  React, Node.js, PostgreSQL, and M-Pesa Daraja integrations. I&apos;m
+                  also a Computer Science student at Kiambu National Polytechnic.
                 </p>
               </div>
 
@@ -204,13 +197,10 @@ export default function HomePage() {
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </a>
                 <a
-                  href="https://muregis.github.io/EduCore"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition-colors hover:border-cyan-300/40"
                 >
-                  EduCore Live
-                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                  Hire Me
                 </a>
                 <Link
                   href="/academic"
@@ -333,7 +323,7 @@ export default function HomePage() {
               <SectionBadge icon={BriefcaseBusiness}>Featured Work</SectionBadge>
             }
             title="Live Projects & Products"
-            intro="Production websites and enterprise software built for real clients — several are running today."
+            intro="Websites and management systems built for real clients — several are running today."
           />
           <ProjectGrid />
         </section>
@@ -349,7 +339,7 @@ export default function HomePage() {
               <SectionBadge icon={LayoutDashboard}>Work Experience</SectionBadge>
             }
             title="Professional Journey"
-            intro="From first line of code to leading product teams."
+            intro="Self-taught in 2022 — now building products for schools and businesses across Kenya."
           />
           <div className="space-y-6">
             {timeline.map((item) => (
@@ -412,31 +402,22 @@ export default function HomePage() {
             </div>
             <div className="glass h-fit rounded-[2rem] p-6 lg:sticky lg:top-6">
               <h3 className="text-xl font-semibold text-white sm:text-2xl">
-                Proficiency Snapshot
+                Where I work day to day
               </h3>
-              <div className="mt-6 space-y-5">
+              <ul className="mt-6 flex flex-wrap gap-2">
                 {proficiency.map((item) => (
-                  <div key={item.label}>
-                    <div className="mb-2 flex items-center justify-between text-sm text-slate-300">
-                      <span>{item.label}</span>
-                      <span>{item.value}%</span>
-                    </div>
-                    <div
-                      className="h-3 overflow-hidden rounded-full bg-white/10"
-                      role="img"
-                      aria-label={`${item.label}: ${item.value}% proficiency`}
-                    >
-                      <div
-                        className="h-3 rounded-full bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-500"
-                        style={{ width: `${item.value}%` }}
-                      />
-                    </div>
-                  </div>
+                  <li
+                    key={item}
+                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200"
+                  >
+                    {item}
+                  </li>
                 ))}
-              </div>
+              </ul>
               <p className="mt-6 text-sm leading-6 text-slate-400">
-                Comfortable across the full stack — strongest where payments,
-                data, and production reliability meet.
+                Frontend-heavy full stack: React and TypeScript apps talking to
+                Node.js APIs over PostgreSQL, with M-Pesa Daraja payment flows.
+                Java and Python come in for coursework and automation work.
               </p>
             </div>
           </div>
@@ -508,8 +489,8 @@ export default function HomePage() {
               {site.brand}
             </h2>
             <p className="mt-3 text-slate-300">
-              The products I founded and lead — enterprise software used by
-              schools and businesses across Kenya.
+              What I&apos;m building at MuregiScore — software for Kenyan schools
+              and businesses.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {products.map((product) => (
@@ -528,17 +509,19 @@ export default function HomePage() {
         </section>
 
         {/* -------------------------- Testimonials -------------------------- */}
-        <section
-          aria-labelledby="testimonials-heading"
-          className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24"
-        >
-          <SectionHeading
-            eyebrow={<SectionBadge icon={Star}>Client Feedback</SectionBadge>}
-            title="What Clients Say"
-            intro="Feedback from the people running the products I&apos;ve built."
-          />
-          <TestimonialBlock />
-        </section>
+        {testimonials.length > 0 ? (
+          <section
+            aria-labelledby="testimonials-heading"
+            className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24"
+          >
+            <SectionHeading
+              eyebrow={<SectionBadge icon={Star}>Client Feedback</SectionBadge>}
+              title="What Clients Say"
+              intro="Feedback from the people running the products I&apos;ve built."
+            />
+            <TestimonialBlock />
+          </section>
+        ) : null}
 
         {/* ------------------------------ FAQ ------------------------------- */}
         <section
@@ -587,25 +570,36 @@ export default function HomePage() {
                       </li>
                     )
                   )}
-                </ul>
-                <p className="mt-8 inline-flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-300">
-                  <WalletCards
+                </ul>                <p className="mt-8 inline-flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-300">
+                  <MessageCircle
                     className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300"
                     aria-hidden="true"
                   />
-                  Enjoying the work? Buy me a coffee — every shilling goes toward
-                  building more open tools for Kenyan businesses.
+                  Building a payment flow for your product? That&apos;s exactly what I
+                  do — M-Pesa, Paystack, or card rails. Tell me about it on WhatsApp
+                  and I&apos;ll walk you through the approach.
                 </p>
               </div>
               <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/35 p-6">
-                <h3 className="text-lg font-semibold text-white">Support the work</h3>
+                <h3 className="text-lg font-semibold text-white">
+                  Need M-Pesa in your product?
+                </h3>
                 <p className="mt-2 text-sm leading-6 text-slate-300">
-                  Use the Till or send-to-phone details below, or reach me
-                  directly on WhatsApp.
+                  Tell me what you&apos;re building and I&apos;ll reply with how I&apos;d
+                  handle the payment flow — STK Push, C2B/B2C, callbacks, and
+                  verification.
                 </p>
-                <div className="mt-6">
-                  <PaymentsSupport />
-                </div>
+                <a
+                  href={`${site.whatsapp}?text=${encodeURIComponent(
+                    "Hi Victor, I'd like to discuss an M-Pesa integration for my product."
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400 px-6 py-3 font-semibold text-slate-950 transition-opacity hover:opacity-90"
+                >
+                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                  Chat on WhatsApp
+                </a>
               </div>
             </div>
           </div>

@@ -35,8 +35,10 @@ anywhere in the UI.
   `src/app/sitemap.ts`; `llms.txt` in `public/`
 - Multi-size favicon set (SVG + 16/32 PNG + ICO + Apple touch + PWA icons)
 
-The canonical domain defaults to `https://victormuregi.dev`; override it per
-environment with `NEXT_PUBLIC_SITE_URL` (see `env.example`).
+The canonical domain defaults to the project's Vercel URL
+(`https://personal-portfolio-muregis-projects.vercel.app`); override it per
+environment with `NEXT_PUBLIC_SITE_URL` (see `env.example`) once a custom
+domain is attached.
 
 ## Development
 
@@ -90,7 +92,7 @@ lint/typecheck/build jobs pass).
 
 The deploy job also needs `NEXT_PUBLIC_SITE_URL` set in your Vercel project
 environment (Production) so canonical URLs use the real domain — it falls back
-to `https://victormuregi.dev` if unset.
+to the project's Vercel URL in `src/lib/site.ts` if unset.
 
 ## Analytics & error monitoring
 
@@ -132,3 +134,41 @@ src/lib/            site content & SEO schema modules
 scripts/            brand asset generator
 public/             static assets, resume PDF, llms.txt
 ```
+
+## Launch checklist (traffic & indexing)
+
+Run these once after the first production deploy — most are one-time Vercel /
+Google steps, not code changes.
+
+1. **Make the deployment public.** Vercel project → Settings → Deployment
+   Protection. If "Vercel Authentication" (or SSO) is on, every visitor is
+   asked to log in — turn it off (or add a domain) or nobody but you can open
+   the site. Confirm the site loads in a private/incognito window.
+2. **Check the canonical URL.** The site defaults to the project's Vercel URL.
+   In Vercel project → Settings → Environment Variables, make sure
+   `NEXT_PUBLIC_SITE_URL` (Production) matches the exact URL visitors should
+   see — or delete it to use the default. Canonical tags, `sitemap.xml`,
+   `robots.txt`, Open Graph, and JSON-LD all follow it.
+3. **Stop the misleading GitHub Pages URL.** Repo → Settings → Pages: this
+   repo has no published static build, so `muregis.github.io/Personal-portfolio`
+   renders the README. Set Source to **None** unless you intentionally publish
+   the static export there.
+4. **Google Search Console.** Add a URL-prefix property for the public Vercel
+   URL, verify it (meta tag or Google account), submit `/sitemap.xml`, then
+   request indexing for `/` and `/academic`.
+5. **Google Analytics 4.** Create a GA4 property, copy the Measurement ID
+   (`G-…`), add it as `GA4_MEASUREMENT_ID` in Vercel → Environment Variables
+   (Production), and redeploy. The snippet is already wired in
+   `src/components/analytics` and loads nothing until the variable exists.
+6. **Distribute.** Put the URL in your GitHub profile README, pin the repo,
+   set it as the LinkedIn website field and featured link, add it to your
+   email signature, WhatsApp Business, and the resume PDF. Traffic follows
+   where you point people — the site itself only needs to be reachable.
+
+## Deploying
+
+Pushing to `main` runs lint/typecheck/build and — only when the `VERCEL_TOKEN`
+/ `VERCEL_ORG_ID` / `VERCEL_PROJECT_ID` secrets exist in GitHub → Settings →
+Secrets and variables → Actions — deploys to Vercel. If those secrets are
+missing, connect the repo in the Vercel dashboard instead (Vercel git
+integration deploys every push with no workflow needed).

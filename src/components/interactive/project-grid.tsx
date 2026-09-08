@@ -22,24 +22,18 @@ const projectImages: Record<string, StaticImageData> = {
   "Nuru AI Chatbot": nuruAiImg
 };
 
-type Filter = "all" | Project["status"] | "live";
+type Filter = "all" | Project["status"];
 
 const filters: { value: Filter; label: string }[] = [
   { value: "all", label: "All Projects" },
-  { value: "live", label: "Live Sites" },
-  { value: "Enterprise", label: "Enterprise" },
+  { value: "Live", label: "Live Sites" },
   { value: "In Development", label: "In Development" }
 ];
 
 function statusStyle(status: Project["status"]) {
-  switch (status) {
-    case "Live":
-      return "bg-emerald-300 text-emerald-950";
-    case "Enterprise":
-      return "bg-sky-300 text-sky-950";
-    default:
-      return "bg-amber-300 text-amber-950";
-  }
+  return status === "Live"
+    ? "bg-emerald-300 text-emerald-950"
+    : "bg-amber-300 text-amber-950";
 }
 
 export function ProjectGrid() {
@@ -97,11 +91,7 @@ export function ProjectGrid() {
                   statusStyle(project.status)
                 )}
               >
-                {project.status === "Live"
-                  ? "Live"
-                  : project.status === "Enterprise"
-                    ? "Enterprise"
-                    : "In Development"}
+                {project.status === "Live" ? "Live" : "In Development"}
               </span>
             </div>
             <div className="flex flex-1 flex-col gap-4 p-6">

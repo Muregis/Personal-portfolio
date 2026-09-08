@@ -1,11 +1,11 @@
 # Victor Muregi
 
-> Full-stack developer and founder in Nairobi, Kenya building enterprise software for African businesses — React, Node.js, PostgreSQL, and M-Pesa Daraja API integrations. Founder of MuregiScore Technologies.
+> Full-stack developer and founder in Nairobi, Kenya building web software for Kenyan schools and businesses — React, Node.js, PostgreSQL, and M-Pesa Daraja API integrations. Founder of MuregiScore Technologies and Computer Science student at Kiambu National Polytechnic.
 
 ## Pages
 
-- [Home](https://victormuregi.dev/): Professional portfolio — projects (EduCore, StockCore, ClientCore, Sawa Solar), experience, skills, education, client feedback, FAQ, and contact.
-- [Academic Portfolio](https://victormuregi.dev/academic): Computer Science coursework and focus areas at Kiambu National Polytechnic.
+- [Home](https://personal-portfolio-muregis-projects.vercel.app/): Professional portfolio — projects (EduCore, Sawa Solar, StockCore, ClientCore, Nuru AI), experience, skills, education, FAQ, and contact.
+- [Academic Portfolio](https://personal-portfolio-muregis-projects.vercel.app/academic): Computer Science coursework and focus areas at Kiambu National Polytechnic.
 
 ## Key facts
 
@@ -13,8 +13,8 @@
 - Role: Full-Stack Developer; Founder & Lead Developer, MuregiScore Technologies
 - Location: Nairobi, Kenya
 - Education: Diploma in Computer Science, Kiambu National Polytechnic (2023 – present, expected 2026)
-- Focus: M-Pesa Daraja (STK Push, C2B, B2C), school management systems, financial reporting, inventory & CRM platforms, AI chatbots for local languages
-- Stack: React, TypeScript, Node.js, Express, PostgreSQL, Java, Python, C++, HTML/CSS, Tailwind CSS
+- Focus: M-Pesa Daraja (STK Push, C2B, B2C), school management systems, business websites, inventory & CRM platforms, local-language NLP experiments
+- Stack: React, TypeScript, Next.js, Node.js, Express, PostgreSQL, Tailwind CSS, Java, Python, C++, HTML/CSS
 
 ## Contact
 

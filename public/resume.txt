@@ -1,88 +1,82 @@
 VICTOR MUREGI
-Polyglot Software Engineer | Founder, MuregiScore Technologies
+Full-Stack Developer & Founder
+Building web software for Kenyan schools and businesses
+
 Nairobi, Kenya | +254 797 846 126 | i.am.muregi@gmail.com
 GitHub: github.com/Muregis | LinkedIn: linkedin.com/in/victor-muregi
+Portfolio: personal-portfolio-muregis-projects.vercel.app
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-PROFESSIONAL SUMMARY
+SUMMARY
 
-Polyglot Software Engineer with expertise across Java, Python, C++, and full-stack web development. 
-Founder of MuregiScore Technologies, building enterprise solutions for African markets. 
-Proven track record of shipping 5+ production products handling millions in transactions. 
-Specialized in M-Pesa integrations, system architecture, and high-performance computing.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-TECHNICAL EXPERTISE
-
-Languages: Java, Python, C++, JavaScript/Node.js, VB.NET, SQL
-Backend: Spring Boot, Express.js, FastAPI, Django
-Frontend: React, HTML5, CSS3, Tailwind CSS
-Databases: PostgreSQL, MySQL, Redis, SQLite
-APIs & Integrations: M-Pesa Daraja API, RESTful APIs, Webhooks
-DevOps & Tools: Docker, Git, Linux, AWS, Vercel, GitHub Actions
-Specializations: Multi-threading, Payment Systems, School Management, Financial Reporting
+Self-taught developer since 2022 and current Computer Science student
+(Diploma, Kiambu National Polytechnic, expected 2026). Founded MuregiScore
+Technologies in 2024 and lead product and engineering for EduCore, a
+school-management platform with M-Pesa payment flows. Comfortable across the
+full stack - React and TypeScript on the frontend, Node.js and PostgreSQL on
+the backend - and experienced taking freelance work from a brief to a
+deployed, live site.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-PROFESSIONAL EXPERIENCE
+EXPERIENCE
 
-FOUNDER & CTO | MuregiScore Technologies | 2024 - Present
-• Founded and scaled a SaaS platform for school management and financial reporting
-• Built 5 production-grade products serving 1000+ users across Kenya
-• Architected multi-language backend supporting Java, Python, and Node.js
-• Implemented M-Pesa STK Push integration processing 10,000+ transactions/minute
-• Achieved 99.97% uptime and 100% data integrity for financial systems
+FOUNDER & LEAD DEVELOPER | MuregiScore Technologies | 2024 - Present
+• Founded the company and lead product, engineering, and client
+  relationships end to end.
+• Built EduCore: school-management platform (student records, fee tracking,
+  timetables, automated report cards) with M-Pesa STK Push fee payments.
+• Optimised report-card generation for 1,000+ student records from a
+  5-second target to ~2.3 seconds using caching and query tuning.
+• Take products from requirements through deployment, training, and
+  ongoing support.
 
-LEAD DEVELOPER | EduCore School Management System | 2024 - Present
-• Engineered full-stack React + Node.js + PostgreSQL application
-• Optimized report generation for 1000+ students: 2.3 seconds (target: 5 seconds)
-• Implemented caching strategies reducing database queries by 70%
-• Achieved 99.97% uptime with automated monitoring and alerting
-
-BACKEND ENGINEER | FinanceFlow Enterprise (Java) | 2024 - Present
-• Designed multi-threaded transaction processing engine in Java Spring Boot
-• Handled 10,000+ transactions/minute with zero data loss
-• Implemented ACID compliance for KES 5M+ monthly transaction volumes
-• Built audit-compliant financial reporting system for Sacco federations
-
-AUTOMATION ENGINEER | AutoM-Pesa Reconciler (Python) | 2024 - Present
-• Developed Python automation suite for M-Pesa webhook processing
-• Implemented HMAC-SHA256 signature validation and duplicate detection (100% accuracy)
-• Eliminated 10+ hours of manual data entry per week
-• Achieved 99.9% uptime with graceful error handling
+FREELANCE WEB DEVELOPER | Self-employed | 2023 - Present
+• Delivered 15+ sites and web apps for Kenyan businesses and institutions.
+• Representative live work: Sawa Solar Solutions (solar company website)
+  and a technical polytechnic website - both linked from my portfolio.
+• Typical scope: marketing sites, dashboards, and simple management systems.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 EDUCATION
 
-COMPUTER SCIENCE | Kiambu National Polytechnic | 2023 - Present
-Relevant Coursework: Data Structures, Algorithms, Database Design, System Architecture
+DIPLOMA IN COMPUTER SCIENCE | Kiambu National Polytechnic | 2023 - Present
+(expected 2026)
+Relevant coursework: programming, data structures & algorithms, database
+systems, software engineering, web development, computer networks, system
+analysis & design.
 
-SELF-TAUGHT DEVELOPER | 2022 - Present
-• Mastered 6+ programming languages through intensive self-study
-• Built 15+ projects across multiple technology stacks
-• Contributed to open-source projects and technical communities
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-KEY ACHIEVEMENTS
-
-✓ Built systems processing KES 5M+ monthly transactions with 100% accuracy
-✓ Reduced report generation time by 70% through optimization
-✓ Achieved 99.97% uptime in production environments
-✓ Implemented M-Pesa integration for 1000+ users
-✓ Shipped 5 production products in 18 months
-✓ Founded profitable SaaS company while still in polytechnic
+SELF-TAUGHT DEVELOPMENT | 2022 - Present
+• Started with Python in 2022 and learned web development by shipping real
+  projects.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-CERTIFICATIONS & RECOGNITION
+SELECTED PROJECTS
 
-• Google Cloud Certified Associate Cloud Engineer (In Progress)
-• M-Pesa Daraja API Specialist
-• Full-Stack Web Development Certified
-• Open Source Contributor
+• EduCore - school-management platform with M-Pesa payments
+  (github.com/Muregis/educore-school-management-system)
+• Sawa Solar Solutions - live client website
+  (muregis.github.io/Sawa-solar--solution-website)
+• Polytechnic institution website - live client site
+  (muregis.github.io/School-Website)
+• StockCore, ClientCore, Nuru AI - in development; see portfolio
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SKILLS
+
+Frontend: React, TypeScript, Next.js, Tailwind CSS, responsive HTML/CSS
+Backend: Node.js, Express, PostgreSQL, MySQL, REST APIs, JWT authentication
+Languages: JavaScript/TypeScript, Python, Java, SQL, C++ (coursework in C#
+and VB.NET)
+Payments: M-Pesa Daraja API (STK Push, C2B, B2C, webhooks), Paystack
+Tools: Git, GitHub, GitHub Actions, Docker (basics), Linux, Vercel
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CERTIFICATIONS
+
+• Google Cloud Certified Associate Cloud Engineer - currently preparing

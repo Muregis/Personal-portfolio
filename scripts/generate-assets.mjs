@@ -113,8 +113,8 @@ const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
   </g>
   <text x="280" y="190" font-family="Georgia, 'Times New Roman', serif" font-size="66" font-weight="700" fill="#ffffff">Victor Muregi</text>
   <text x="282" y="252" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="3" fill="#9fb3c8">FULL-STACK DEVELOPER · FOUNDER</text>
-  <text x="280" y="420" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#e5eef9">Polyglot engineer building enterprise software for</text>
-  <text x="280" y="462" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#e5eef9">African businesses — M-Pesa, React, Node.js, Java.</text>
+  <text x="280" y="420" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#e5eef9">Building web software for Kenyan schools &amp;</text>
+  <text x="280" y="462" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#e5eef9">businesses — React, Node.js, M-Pesa.</text>
   <rect x="280" y="516" width="76" height="4" rx="2" fill="url(#gold)"/>
   <text x="280" y="566" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6" fill="#f6c34b">MUREGISCORE TECHNOLOGIES</text>
 </svg>`;

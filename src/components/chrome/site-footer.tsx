@@ -45,8 +45,8 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
-              Full-stack developer building enterprise software for African
-              businesses — school management, payments, and business intelligence.
+              Full-stack developer building web software for Kenyan schools
+              and businesses — management systems, websites, and M-Pesa payments.
             </p>
             <ul className="mt-5 flex gap-3" aria-label="Social profiles">
               {socialLinks.map(({ label, href, Icon }) => (
