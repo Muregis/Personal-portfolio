@@ -1,25 +1,30 @@
 # Victor Muregi
 
-> Full-stack developer and founder in Nairobi, Kenya building web software for Kenyan schools and businesses — React, Node.js, PostgreSQL, and M-Pesa Daraja API integrations. Founder of MuregiScore Technologies and Computer Science student at Kiambu National Polytechnic.
+> Full-stack software engineer and founder of MuregiScore Technologies in Nairobi, Kenya. Engineering web software, institutional systems, and Safaricom M-Pesa Daraja payment workflows using React, TypeScript, Node/Express, PHP, PostgreSQL/MySQL, RBAC, and background queues. Computer Science student at Kiambu National Polytechnic.
 
-## Pages
+## Pages & Routes
 
-- [Home](https://personal-portfolio-muregis-projects.vercel.app/): Professional portfolio — projects (EduCore, Sawa Solar, StockCore, ClientCore, Nuru AI), experience, skills, education, FAQ, and contact.
-- [Academic Portfolio](https://personal-portfolio-muregis-projects.vercel.app/academic): Computer Science coursework and focus areas at Kiambu National Polytechnic.
+- [Home](https://personal-portfolio-muregis-projects.vercel.app/): Engineering portfolio — flagship projects (EduCore, Core CRM, EduCore Ratiba), commercial systems, architecture competencies, experience, skills, FAQ, and contact.
+- [EduCore Case Study](https://personal-portfolio-muregis-projects.vercel.app/projects/educore): School management, student records, CBC grading, automated report cards, and M-Pesa fee tracking.
+- [Core CRM Case Study](https://personal-portfolio-muregis-projects.vercel.app/projects/core-crm): Sales pipeline, customer intelligence, multi-tier RBAC, and operational workflows.
+- [EduCore Ratiba Case Study](https://personal-portfolio-muregis-projects.vercel.app/projects/educore-ratiba): Constraint-satisfaction (CSP) academic timetable engine eliminating collisions.
+- [Sawa Solar Case Study](https://personal-portfolio-muregis-projects.vercel.app/projects/sawa-solar): Commercial solar platform and lead generation bridge.
+- [Gracious Love Academy Case Study](https://personal-portfolio-muregis-projects.vercel.app/projects/school-website): Institutional admissions and academic portal.
+- [Livestock Management Case Study](https://personal-portfolio-muregis-projects.vercel.app/projects/livestock-management): Agricultural animal health and yield platform.
+- [Academic Portfolio](https://personal-portfolio-muregis-projects.vercel.app/academic): Computer Science coursework, lab exercises, and systems curriculum at Kiambu National Polytechnic.
 
-## Key facts
+## Key Facts
 
 - Name: Victor Muregi
-- Role: Full-Stack Developer; Founder & Lead Developer, MuregiScore Technologies
+- Role: Full-Stack Software Engineer; Founder & Lead Engineer, MuregiScore Technologies
 - Location: Nairobi, Kenya
-- Education: Diploma in Computer Science, Kiambu National Polytechnic (2023 – present, expected 2026)
-- Focus: M-Pesa Daraja (STK Push, C2B, B2C), school management systems, business websites, inventory & CRM platforms, local-language NLP experiments
-- Stack: React, TypeScript, Next.js, Node.js, Express, PostgreSQL, Tailwind CSS, Java, Python, C++, HTML/CSS
+- Education: Diploma in Computer Science (Level 6), Kiambu National Polytechnic (2023 – present, expected 2026)
+- Core Focus: Multi-tenant web systems, M-Pesa Daraja payment rails, Role-Based Access Control (RBAC), database normalization, background job queues, institutional workflow automation
+- Stack: React, TypeScript, Next.js, Node.js, Express, PHP, PostgreSQL, MySQL, Tailwind CSS, Redis patterns, Git, Linux, Vercel
 
 ## Contact
 
 - Email: i.am.muregi@gmail.com
-- WhatsApp: +254 797 846 126 (https://wa.me/254797846126)
+- Phone / WhatsApp: +254 797 846 126 (https://wa.me/254797846126)
 - GitHub: https://github.com/Muregis
 - LinkedIn: https://www.linkedin.com/in/victor-muregi
-- Instagram: https://www.instagram.com/i_am.muregi

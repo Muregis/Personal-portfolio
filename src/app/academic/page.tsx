@@ -178,8 +178,8 @@ export default function AcademicPage() {
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-slate-300">
                   What I learn in class I ship in production — EduCore (school
-                  management), StockCore (inventory), and M-Pesa integrations for
-                  real businesses.
+                  management), Core CRM (sales operations), EduCore Ratiba (timetabling engine),
+                  and M-Pesa Daraja payment integrations for real institutions.
                 </p>
               </div>
               <Link

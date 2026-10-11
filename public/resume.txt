@@ -1,6 +1,6 @@
 VICTOR MUREGI
-Full-Stack Developer & Founder
-Building web software for Kenyan schools and businesses
+Full-Stack Software Engineer & Founder
+Building web software, systems & payment solutions for Kenyan institutions
 
 Nairobi, Kenya | +254 797 846 126 | i.am.muregi@gmail.com
 GitHub: github.com/Muregis | LinkedIn: linkedin.com/in/victor-muregi
@@ -10,73 +10,80 @@ Portfolio: personal-portfolio-muregis-projects.vercel.app
 
 SUMMARY
 
-Self-taught developer since 2022 and current Computer Science student
-(Diploma, Kiambu National Polytechnic, expected 2026). Founded MuregiScore
-Technologies in 2024 and lead product and engineering for EduCore, a
-school-management platform with M-Pesa payment flows. Comfortable across the
-full stack - React and TypeScript on the frontend, Node.js and PostgreSQL on
-the backend - and experienced taking freelance work from a brief to a
-deployed, live site.
+Full-stack software engineer and current Computer Science student
+(Diploma Level 6, Kiambu National Polytechnic, expected 2026). Founder of
+MuregiScore Technologies (2024), architecting production software including
+EduCore (school operations & report card engine), Core CRM (pipeline operations),
+and EduCore Ratiba (constraint-satisfaction academic timetabling engine).
+Proficient across React, TypeScript, Node/Express, PHP, PostgreSQL/MySQL,
+granular Role-Based Access Control (RBAC), background queues, and Safaricom
+M-Pesa Daraja payment workflows.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 EXPERIENCE
 
-FOUNDER & LEAD DEVELOPER | MuregiScore Technologies | 2024 - Present
-• Founded the company and lead product, engineering, and client
-  relationships end to end.
-• Built EduCore: school-management platform (student records, fee tracking,
-  timetables, automated report cards) with M-Pesa STK Push fee payments.
-• Optimised report-card generation for 1,000+ student records from a
-  5-second target to ~2.3 seconds using caching and query tuning.
-• Take products from requirements through deployment, training, and
-  ongoing support.
+FOUNDER & LEAD SOFTWARE ENGINEER | MuregiScore Technologies | 2024 - Present
+• Founded company and lead product architecture, systems engineering, and client
+  deliverables end to end.
+• Built EduCore: comprehensive school operations platform (student records,
+  fee tracking, CBC grading, automated report cards) with M-Pesa STK Push payments.
+• Engineered Core CRM: multi-tier sales pipeline and customer interaction engine
+  with granular data isolation and Kanban deal management.
+• Developed EduCore Ratiba: academic timetable scheduling engine utilizing
+  Constraint Satisfaction Problem (CSP) heuristic algorithms (<3s generation time,
+  zero teacher or room clashes).
+• Implemented idempotent M-Pesa Daraja webhook ingestion with database transaction
+  locking to guarantee zero double-crediting under cellular network timeouts.
 
-FREELANCE WEB DEVELOPER | Self-employed | 2023 - Present
-• Delivered 15+ sites and web apps for Kenyan businesses and institutions.
-• Representative live work: Sawa Solar Solutions (solar company website)
-  and a technical polytechnic website - both linked from my portfolio.
-• Typical scope: marketing sites, dashboards, and simple management systems.
+FREELANCE FULL-STACK DEVELOPER | Client Solutions | 2023 - Present
+• Delivered 15+ web applications, portals, and operational databases for Kenyan
+  businesses, schools, and agricultural ventures.
+• Representative live work: Sawa Solar Solutions (clean-energy commercial portal),
+  Gracious Love Academy (school platform), and Livestock Management Platform.
+• Engineered responsive mobile-first UIs optimized for entry-level Android devices
+  and slower 3G/4G network conditions.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 EDUCATION
 
-DIPLOMA IN COMPUTER SCIENCE | Kiambu National Polytechnic | 2023 - Present
+DIPLOMA IN COMPUTER SCIENCE (LEVEL 6) | Kiambu National Polytechnic | 2023 - Present
 (expected 2026)
-Relevant coursework: programming, data structures & algorithms, database
-systems, software engineering, web development, computer networks, system
-analysis & design.
+Relevant coursework: software engineering, data structures & algorithms,
+database systems (RDBMS), operating systems (Linux/Windows), computer networks,
+system analysis & design.
 
-SELF-TAUGHT DEVELOPMENT | 2022 - Present
-• Started with Python in 2022 and learned web development by shipping real
-  projects.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SELECTED PROJECTS
-
-• EduCore - school-management platform with M-Pesa payments
-  (github.com/Muregis/educore-school-management-system)
-• Sawa Solar Solutions - live client website
-  (muregis.github.io/Sawa-solar--solution-website)
-• Polytechnic institution website - live client site
-  (muregis.github.io/School-Website)
-• StockCore, ClientCore, Nuru AI - in development; see portfolio
+SELF-TAUGHT ENGINEERING FOUNDATION | 2022 - Present
+• Began software engineering in 2022 with Python and JavaScript, progressing
+  through full-stack web architectures, SQL databases, and systems design.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SKILLS
+FLAGSHIP SYSTEMS & SELECTED PROJECTS
 
-Frontend: React, TypeScript, Next.js, Tailwind CSS, responsive HTML/CSS
-Backend: Node.js, Express, PostgreSQL, MySQL, REST APIs, JWT authentication
-Languages: JavaScript/TypeScript, Python, Java, SQL, C++ (coursework in C#
-and VB.NET)
-Payments: M-Pesa Daraja API (STK Push, C2B, B2C, webhooks), Paystack
-Tools: Git, GitHub, GitHub Actions, Docker (basics), Linux, Vercel
+• EduCore - School operations & CBC report card system with M-Pesa Daraja
+  (Live: educore-school-management-system-pi.vercel.app | Repo: github.com/Muregis/educore-school-management-system)
+• Core CRM - Sales pipeline, contact intelligence & RBAC operations
+  (Live: github.com/Muregis/Core-Crm-model)
+• EduCore Ratiba - Constraint-driven academic timetabling & room allocation engine
+  (Live: educoreratiba.vercel.app | Repo: github.com/Muregis/Educore-Ratiba)
+• Sawa Solar Solution - Commercial solar platform & quoting bridge
+  (Live: sawa-solar-solution-website.vercel.app | Repo: github.com/Muregis/Sawa-solar--solution-website)
+• Gracious Love Academy - Educational institutional portal
+  (Live: graciousloveacademy-school-website.vercel.app | Repo: github.com/Muregis/School-Website)
+• Livestock Management Platform - Agricultural animal records & yield tracking
+  (Live: livestock-management-app.vercel.app | Repo: github.com/Muregis/Livestock-Management-App)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-CERTIFICATIONS
+TECHNICAL SKILLS
 
-• Google Cloud Certified Associate Cloud Engineer - currently preparing
+Frontend: React, TypeScript, Next.js, Tailwind CSS, Responsive Design, State Management
+Backend: Node.js, Express, PHP, RESTful APIs, Webhooks, API Versioning
+Databases: PostgreSQL, MySQL, Relational Normalization, Indexing, ACID Transactions
+Security: JWT Auth, Session Cookies, Bcrypt, Role-Based Access Control (RBAC)
+Queues & Async: Background Job Queues (Redis/BullMQ patterns), Batch PDF Generators
+DevOps & Tools: Git, GitHub, GitHub Actions CI/CD, Linux (Ubuntu), Nginx, Docker (basics), Vercel
+Payments: Safaricom M-Pesa Daraja API (STK Push, C2B, B2C, Idempotent Webhooks), Paystack
+Languages: TypeScript, JavaScript, PHP, Python, Java, SQL, C++

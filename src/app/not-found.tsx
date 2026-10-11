@@ -49,6 +49,12 @@ export default function NotFound() {
             Back to Homepage
           </Link>
           <Link
+            href="/#projects"
+            className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-6 py-3 font-semibold text-cyan-200 transition-colors hover:bg-cyan-400/20"
+          >
+            Explore Projects
+          </Link>
+          <Link
             href="/academic"
             className="inline-flex items-center gap-2 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-6 py-3 font-semibold text-fuchsia-100 transition-colors hover:bg-fuchsia-300/20"
           >

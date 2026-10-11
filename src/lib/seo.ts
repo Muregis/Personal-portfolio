@@ -1,36 +1,40 @@
 import type { Metadata } from "next";
-import { site, absolute, faqs } from "@/lib/site";
+import { site, absolute, faqs, type Project } from "@/lib/site";
 
 /** Share card used by Open Graph & Twitter (generated, see scripts/generate-assets.mjs). */
 export const shareImage = {
   url: absolute("/og.png"),
   width: 1200,
   height: 630,
-  alt: "Victor Muregi — Full-Stack Developer and Founder of MuregiScore Technologies",
+  alt: "Victor Muregi — Full-Stack Software Engineer and Founder of MuregiScore Technologies",
   type: "image/png" as const
 };
 
 const description =
-  "Full-stack developer and founder in Nairobi, Kenya building web software for Kenyan schools and businesses — React, Node.js, PostgreSQL, and M-Pesa Daraja integrations.";
+  "Victor Muregi is a full-stack software engineer and founder of MuregiScore Technologies in Nairobi, Kenya. Engineering robust systems with React, TypeScript, Node/Express, PHP, PostgreSQL/MySQL, RBAC, queues, and M-Pesa Daraja payment workflows.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Victor Muregi | Full-Stack Developer & Founder",
+    default: "Victor Muregi | Full-Stack Software Engineer & Founder",
     template: "%s | Victor Muregi"
   },
   description,
-  applicationName: "Victor Muregi — Portfolio",
+  applicationName: "Victor Muregi — Engineering Portfolio",
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
   keywords: [
     "Victor Muregi",
-    "full-stack developer Kenya",
-    "web developer Nairobi",
-    "M-Pesa integration developer",
-    "React developer Nairobi",
-    "MuregiScore Technologies",
-    "school management system Kenya"
+    "Full-Stack Software Engineer",
+    "React TypeScript developer Nairobi",
+    "Node Express PostgreSQL developer Kenya",
+    "PHP MySQL developer Nairobi",
+    "M-Pesa Daraja API integration specialist",
+    "Role-Based Access Control RBAC",
+    "EduCore School Management System",
+    "EduCore Ratiba Timetabling Engine",
+    "Core CRM",
+    "MuregiScore Technologies"
   ],
   alternates: {
     canonical: "/"
@@ -166,3 +170,25 @@ export function breadcrumbSchema(items: { label: string; href?: string }[]) {
     }))
   };
 }
+
+export function projectSchema(project: Project) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${site.url}/projects/${project.slug}#software`,
+    name: project.title,
+    headline: project.tagline,
+    description: project.summary,
+    applicationCategory: project.tag,
+    operatingSystem: "Web",
+    author: { "@id": `${site.url}/#person` },
+    url: `${site.url}/projects/${project.slug}`,
+    image: absolute(project.image),
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "KES"
+    }
+  };
+}
+

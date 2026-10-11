@@ -41,7 +41,7 @@ export function SiteHeader({ items, cta }: { items: NavItem[]; cta?: NavItem }) 
           ))}
           <span className="h-5 w-px bg-white/10" aria-hidden="true" />
           {socialIcons.map(({ label, href, Icon }) => (
-            <Link
+            <a
               key={label}
               href={href}
               target="_blank"
@@ -50,7 +50,7 @@ export function SiteHeader({ items, cta }: { items: NavItem[]; cta?: NavItem }) 
               className="text-slate-300 transition-colors hover:text-white"
             >
               <Icon className="h-4 w-4" />
-            </Link>
+            </a>
           ))}
         </div>
 

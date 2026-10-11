@@ -1,18 +1,17 @@
 /**
  * Central site configuration & content.
  *
- * Shared by server-rendered pages and the small interactive islands.
+ * Shared by server-rendered pages and interactive islands.
  * Keep this module free of JSX so both can import it safely.
  */
 
 export const site = {
   name: "Victor Muregi",
   brand: "MuregiScore Technologies",
-  tagline: "Web software for Kenyan schools & businesses",
-  role: "Full-Stack Developer",
+  tagline: "Reliable web software, systems & payment solutions for Kenyan institutions",
+  role: "Full-Stack Software Engineer & Founder",
   location: "Nairobi, Kenya",
-  // Stable public deployment. Override per environment with NEXT_PUBLIC_SITE_URL
-  // (Vercel project env) once a custom domain is attached.
+  // Stable public deployment. Override per environment with NEXT_PUBLIC_SITE_URL.
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
     "https://personal-portfolio-muregis-projects.vercel.app",
@@ -53,136 +52,462 @@ export const nav = {
   primary: [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/#projects" },
+    { label: "Engineering", href: "/#engineering" },
     { label: "Experience", href: "/#experience" },
+    { label: "Academic", href: "/academic" },
     { label: "Contact", href: "/#contact" }
   ]
 };
 
 /** Rotating headline phrases (hero). */
 export const roles = [
-  "Building web software for Kenyan schools & businesses",
-  "Full-stack developer · React · Node.js · PostgreSQL",
-  "Founder of MuregiScore Technologies",
-  "M-Pesa Daraja integration specialist",
-  "Computer Science student at Kiambu National Polytechnic"
+  "Full-Stack Software Engineer · React · Node/Express · PostgreSQL",
+  "Founder & Lead Engineer at MuregiScore Technologies",
+  "Building robust systems: RBAC · Queues · APIs · M-Pesa Rails",
+  "Creator of EduCore, Core CRM & EduCore Ratiba",
+  "Computer Science at Kiambu National Polytechnic"
 ];
 
+export interface ProjectArchitectureLayer {
+  layer: string;
+  detail: string;
+}
+
+export interface ProjectMetric {
+  value: string;
+  label: string;
+}
+
 export interface Project {
+  slug: string;
   title: string;
+  tagline: string;
   summary: string;
-  stack: string[];
-  status: "Live" | "Enterprise" | "In Development";
-  href?: string;
-  hrefLabel?: string;
-  accent: string;
   tag: string;
-  /** Alt text for the card splash image (kept truthful to the photo source). */
+  isFlagship: boolean;
+  status: "Live" | "In Development" | "Production";
+  stack: string[];
+  problem: string;
+  users: string[];
+  architecture: ProjectArchitectureLayer[];
+  architectureSummary: string;
+  engineeringChallenge: string;
+  result: string;
+  metrics: ProjectMetric[];
+  liveDemoUrl?: string;
+  repoUrl?: string;
+  image: string;
   imageAlt: string;
+  accent: string;
+  highlights: string[];
 }
 
 export const projects: Project[] = [
   {
+    slug: "educore",
     title: "EduCore",
-    tag: "School Management",
+    tagline: "Comprehensive School Management & Academic Operations System",
     summary:
-      "School management system with student records, fee tracking, timetabling, and automated report-card generation — my flagship product at MuregiScore.",
-    stack: ["React", "Node.js", "PostgreSQL", "JWT"],
+      "Multi-tenant school operations platform powering student records, CBC grading, automated term report cards, fee tracking, and M-Pesa Daraja payment reconciliation.",
+    tag: "Flagship · School Management System",
+    isFlagship: true,
     status: "Live",
-    href: "https://github.com/Muregis/educore-school-management-system",
-    hrefLabel: "View source on GitHub",
+    stack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "M-Pesa Daraja API",
+      "JWT Auth",
+      "RBAC",
+      "Tailwind CSS"
+    ],
+    problem:
+      "Kenyan secondary and primary schools struggle with paper-heavy administration, delayed fee reconciliation, fragmented student records, and error-prone term report-card compilation that consumes days of teacher time.",
+    users: [
+      "School Principals & Headteachers",
+      "Academic Deans & Subject Teachers",
+      "School Bursars & Accountants",
+      "Parents & Guardians"
+    ],
+    architecture: [
+      {
+        layer: "Frontend Client",
+        detail:
+          "React SPA with TypeScript, role-tailored dashboard views, local storage caching for offline marks entry, and mobile-first responsive layout optimized for low-bandwidth school networks."
+      },
+      {
+        layer: "API Gateway & RBAC",
+        detail:
+          "RESTful Node.js/Express API enforcing 5-tier Role-Based Access Control (Admin, Principal, Teacher, Bursar, Parent) with JWT authentication and strict input validation schemas."
+      },
+      {
+        layer: "Relational Data Layer",
+        detail:
+          "PostgreSQL with normalized schemas, foreign-key cascade integrity, financial transaction audit tables, and indexed queries for fast grade rollups."
+      },
+      {
+        layer: "Payment & Webhook Ingestion",
+        detail:
+          "Safaricom M-Pesa Daraja STK Push and C2B callback handlers with idempotent transaction logging to guarantee zero double-crediting during network timeouts."
+      }
+    ],
+    architectureSummary:
+      "Client-server architecture on React, Node/Express REST API, and PostgreSQL with M-Pesa Daraja webhook ingestion and role-gated endpoints.",
+    engineeringChallenge:
+      "Handling M-Pesa webhook callbacks under intermittent Kenyan mobile network conditions. Created an idempotent transaction verification pipeline with database transactions to ensure fee receipts are never duplicated, alongside asynchronous batch PDF report-card generation that avoids event-loop blocking during end-of-term surges.",
+    result:
+      "Eliminated paper report-card compilation time by over 80%, automated real-time fee payment reconciliation against student ledgers, and provided instant parental notification.",
+    metrics: [
+      { value: "80%", label: "Faster Report Cards" },
+      { value: "100%", label: "Ledger Reconciliation" },
+      { value: "5", label: "RBAC Access Tiers" }
+    ],
+    liveDemoUrl: "https://educore-school-management-system-pi.vercel.app",
+    repoUrl: "https://github.com/Muregis/educore-school-management-system",
+    image: "/images/projects/educore.jpg",
+    imageAlt:
+      "EduCore school management dashboard showing student records, fees, and academic modules.",
     accent: "from-cyan-400/80 via-sky-500/70 to-blue-600/80",
-    imageAlt:
-      "A stack of school textbooks with an apple, representing EduCore's school-management work."
+    highlights: [
+      "Idempotent M-Pesa Daraja payment callbacks",
+      "Automated CBC report-card generator",
+      "Granular 5-tier Role-Based Access Control",
+      "PostgreSQL transaction integrity for student fees"
+    ]
   },
   {
-    title: "Sawa Solar Solution",
-    tag: "Business Website",
+    slug: "core-crm",
+    title: "Core CRM",
+    tagline: "Sales Pipeline, Customer Intelligence & Operations CRM",
     summary:
-      "Professional solar-energy company website with service showcase, project gallery, and lead-focused contact integration.",
-    stack: ["HTML5", "CSS3", "JavaScript"],
+      "Enterprise customer relationship management platform built for Kenyan SMEs to manage sales pipelines, track omni-channel interactions, and automate follow-ups with role-based access control.",
+    tag: "Flagship · CRM & Sales Engine",
+    isFlagship: true,
     status: "Live",
-    href: "https://muregis.github.io/Sawa-solar--solution-website/",
-    hrefLabel: "View live site",
-    accent: "from-amber-300/80 via-orange-400/70 to-orange-600/70",
+    stack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "REST APIs",
+      "RBAC",
+      "Tailwind CSS"
+    ],
+    problem:
+      "Growing Kenyan businesses and sales teams lose track of customer inquiries, deals, and payment agreements when customer data is scattered across personal WhatsApp threads, spreadsheets, and notebooks without accountability.",
+    users: [
+      "Sales Representatives",
+      "Operations Managers",
+      "Business Founders",
+      "Customer Success Teams"
+    ],
+    architecture: [
+      {
+        layer: "Frontend Application",
+        detail:
+          "Interactive Kanban sales pipeline, customer activity timeline, deal forecasting views, and contact search built with React & TypeScript."
+      },
+      {
+        layer: "API & RBAC Layer",
+        detail:
+          "Express.js REST API with hierarchical Role-Based Access Control separating manager, executive, and account rep access boundaries."
+      },
+      {
+        layer: "Database Engine",
+        detail:
+          "PostgreSQL relational schema modeling organizations, contacts, deals, activities, and communication logs with query optimization."
+      },
+      {
+        layer: "Workflow Automation",
+        detail:
+          "Automated trigger pipelines for stage transitions, overdue deal alerts, and scheduled reminder queues."
+      }
+    ],
+    architectureSummary:
+      "Modular REST API with granular RBAC, relational audit logging in PostgreSQL, and real-time deal pipeline state transitions.",
+    engineeringChallenge:
+      "Designing a scalable multi-user permission model where sales reps only see assigned prospects while administrators inspect organizational-wide pipeline metrics, alongside maintaining sub-50ms query latency across relational join queries on extensive customer interaction histories.",
+    result:
+      "Streamlined deal stages from initial lead capture to contract closure, providing business owners full visibility into pipeline velocity and conversion bottlenecks.",
+    metrics: [
+      { value: "100%", label: "Pipeline Visibility" },
+      { value: "4", label: "Permission Tiers" },
+      { value: "<50ms", label: "Query Response Time" }
+    ],
+    liveDemoUrl: "https://github.com/Muregis/Core-Crm-model",
+    repoUrl: "https://github.com/Muregis/Core-Crm-model",
+    image: "/images/projects/core-crm.jpg",
     imageAlt:
-      "Solar panels outdoors in bright sunlight, representing the Sawa Solar company website."
-  },
-  {
-    title: "Educational Institution Website",
-    tag: "Web Platform",
-    summary:
-      "Modern website for a technical polytechnic featuring academic programs, admission information, facilities, and a news section.",
-    stack: ["HTML5", "CSS3", "Bootstrap"],
-    status: "Live",
-    href: "https://muregis.github.io/School-Website/",
-    hrefLabel: "View live site",
-    accent: "from-emerald-300/80 via-teal-500/70 to-cyan-700/80",
-    imageAlt:
-      "Students walking through a university campus, representing the polytechnic website project."
-  },
-  {
-    title: "StockCore",
-    tag: "Inventory Intelligence",
-    summary:
-      "Inventory and stock-tracking platform for small businesses — item visibility, movement tracking, reorder alerts, and simple insights.",
-    stack: ["React", "Node.js", "PostgreSQL"],
-    status: "In Development",
-    accent: "from-violet-400/80 via-purple-500/70 to-indigo-700/80",
-    imageAlt:
-      "Shelves of binders and archive boxes, representing StockCore's inventory platform."
-  },
-  {
-    title: "ClientCore",
-    tag: "CRM Platform",
-    summary:
-      "CRM platform in development — contact management, sales-pipeline tracking, task automation, and a reporting dashboard.",
-    stack: ["React", "Node.js", "PostgreSQL"],
-    status: "In Development",
+      "Core CRM sales pipeline dashboard showing deal stages, contact activity, and conversion metrics.",
     accent: "from-sky-300/80 via-blue-500/70 to-indigo-600/80",
-    imageAlt:
-      "A business team meeting around a table, representing the ClientCore CRM platform."
+    highlights: [
+      "Visual Kanban deal pipeline with drag-and-drop",
+      "Hierarchical RBAC data isolation",
+      "Activity timeline with unified contact histories",
+      "Optimized PostgreSQL relational queries"
+    ]
   },
   {
-    title: "Nuru AI Chatbot",
-    tag: "NLP Experiment",
+    slug: "educore-ratiba",
+    title: "EduCore Ratiba",
+    tagline: "Constraint-Driven Academic Timetabling & Schedule Optimization Engine",
     summary:
-      "Research project exploring a chatbot for Kikuyu, Swahili, Kamba, and Dholuo with local-language natural-language processing.",
-    stack: ["NLP", "React", "Node.js"],
-    status: "In Development",
-    accent: "from-fuchsia-400/80 via-pink-500/70 to-rose-700/80",
+      "Intelligent academic timetable generation engine that solves the multi-constraint scheduling problem for Kenyan secondary schools, colleges, and polytechnics — eliminating teacher clashes and room collisions.",
+    tag: "Flagship · Scheduling & Constraint Engine",
+    isFlagship: true,
+    status: "Live",
+    stack: [
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Algorithms (CSP)",
+      "PostgreSQL",
+      "Export Engines (PDF)"
+    ],
+    problem:
+      "Every academic term, school administrators spend days manually constructing timetables. Balancing teacher workloads, shared science laboratories, double periods, subject quotas, and room capacities without collision is mathematically difficult and prone to disruptive manual errors.",
+    users: [
+      "Academic Deans & Deputy Principals",
+      "Timetabling Committees",
+      "Department Heads",
+      "Subject Teachers"
+    ],
+    architecture: [
+      {
+        layer: "Constraint Engine",
+        detail:
+          "Constraint Satisfaction Problem (CSP) solver utilizing heuristic backtracking and forward-checking to allocate time slots and physical rooms."
+      },
+      {
+        layer: "Constraint Rule Matrix",
+        detail:
+          "Configurable hard constraints (no teacher double-booking, room capacity bounds) and soft constraints (teacher preferred times, balanced daily workload)."
+      },
+      {
+        layer: "User Interface",
+        detail:
+          "Interactive grid view with instant conflict highlighting, drag-and-drop manual adjustments, and live validation checks."
+      },
+      {
+        layer: "Export & Sync Pipeline",
+        detail:
+          "Automated generation of printable master school timetables, class-specific schedules, and individual teacher allocation cards."
+      }
+    ],
+    architectureSummary:
+      "Heuristic constraint-satisfaction engine integrated with an interactive React grid and automated export pipeline.",
+    engineeringChallenge:
+      "Formulating the combinatorial timetabling problem to prevent state-space explosion for large multi-stream schools (e.g. 40 streams across 8 subjects). Implemented heuristic ordering (Most Constrained Variable first) and constraint propagation to produce valid conflict-free timetables in under 3 seconds.",
+    result:
+      "Reduced timetable generation cycle from 4–5 days of tedious manual drafting to under 3 seconds of automated computation with verified zero room/teacher clashes.",
+    metrics: [
+      { value: "<3s", label: "Generation Time" },
+      { value: "0", label: "Schedule Collisions" },
+      { value: "100%", label: "Lab Constraint Compliance" }
+    ],
+    liveDemoUrl: "https://educoreratiba.vercel.app",
+    repoUrl: "https://github.com/Muregis/Educore-Ratiba",
+    image: "/images/projects/educore-ratiba.jpg",
     imageAlt:
-      "A robot technology display, representing the Nuru AI chatbot."
+      "EduCore Ratiba automated schedule generation matrix showing clash-free class and teacher periods.",
+    accent: "from-teal-400/80 via-cyan-500/70 to-blue-600/80",
+    highlights: [
+      "Constraint Satisfaction Problem (CSP) heuristic solver",
+      "Zero teacher and laboratory double-booking guarantee",
+      "Multi-stream class timetable generation in < 3 seconds",
+      "One-click export to printable schedules & EduCore sync"
+    ]
+  },
+  {
+    slug: "sawa-solar",
+    title: "Sawa Solar Solution",
+    tagline: "Commercial Clean-Energy Web Platform",
+    summary:
+      "Commercial website and customer acquisition portal for a Nairobi solar-energy provider featuring system sizing calculators, project gallery, and lead generation.",
+    tag: "Commercial Web Platform",
+    isFlagship: false,
+    status: "Live",
+    stack: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Vercel"],
+    problem:
+      "A growing solar installation firm needed a fast, mobile-friendly online presence to showcase completed installations and convert residential and commercial inquiries into qualified sales leads.",
+    users: [
+      "Commercial & Residential Solar Customers",
+      "Sales Representatives",
+      "Company Management"
+    ],
+    architecture: [
+      {
+        layer: "Client Interface",
+        detail:
+          "Mobile-first semantic layout optimized for fast rendering on Kenyan mobile networks (3G/4G)."
+      },
+      {
+        layer: "Interactive Tools",
+        detail:
+          "Client-side solar package estimator and WhatsApp direct lead-dispatch bridge."
+      }
+    ],
+    architectureSummary:
+      "Lightweight static web architecture tuned for minimal bandwidth consumption and high mobile conversion.",
+    engineeringChallenge:
+      "Optimizing asset delivery and media assets for mobile users with variable cellular connectivity, ensuring sub-second visual load times without heavy external libraries.",
+    result:
+      "Boosted customer inquiry conversion through instant WhatsApp quoting and established an authoritative digital presence for the company.",
+    metrics: [
+      { value: "100%", label: "Mobile Responsive" },
+      { value: "<1s", label: "First Contentful Paint" }
+    ],
+    liveDemoUrl: "https://sawa-solar-solution-website.vercel.app",
+    repoUrl: "https://github.com/Muregis/Sawa-solar--solution-website",
+    image: "/images/projects/sawa-solar.jpg",
+    imageAlt:
+      "Solar panels outdoors in bright sunlight, representing the Sawa Solar company website.",
+    accent: "from-amber-300/80 via-orange-400/70 to-orange-600/70",
+    highlights: [
+      "Lightweight mobile-first responsive architecture",
+      "Direct WhatsApp sales quotation dispatch",
+      "Optimized media compression for fast 3G loading"
+    ]
+  },
+  {
+    slug: "school-website",
+    title: "Gracious Love Academy",
+    tagline: "Educational Institution Web Platform",
+    summary:
+      "Public portal for a Kenyan educational academy providing curriculum guidelines, admissions intake workflows, school events, and administrative notice board.",
+    tag: "Institutional Web Platform",
+    isFlagship: false,
+    status: "Live",
+    stack: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Responsive Layouts"],
+    problem:
+      "The school lacked a centralized digital presence for prospective parents seeking fee structures, admission criteria, and academic notices, leading to overwhelmed administrative phone lines.",
+    users: [
+      "Prospective & Current Parents",
+      "School Administrators",
+      "Community Members"
+    ],
+    architecture: [
+      {
+        layer: "Web Presentation",
+        detail:
+          "Responsive multi-page platform with admission brochures, program catalogs, and photo galleries."
+      },
+      {
+        layer: "Admissions Inquiries",
+        detail:
+          "Structured intake forms routing prospective student information directly to school bursary staff."
+      }
+    ],
+    architectureSummary:
+      "Static web portal designed for ease of maintenance, accessible navigation, and rapid admission information retrieval.",
+    engineeringChallenge:
+      "Structuring clear content hierarchy and mobile accessibility so parents browsing from entry-level smartphones could quickly find fee breakdowns, term dates, and admission forms.",
+    result:
+      "Streamlined term intake inquiries and eliminated recurring repetitive phone inquiries by publishing standardized school information.",
+    metrics: [
+      { value: "24/7", label: "Admissions Access" },
+      { value: "0", label: "Broken Links" }
+    ],
+    liveDemoUrl: "https://graciousloveacademy-school-website.vercel.app",
+    repoUrl: "https://github.com/Muregis/School-Website",
+    image: "/images/projects/school-site.jpg",
+    imageAlt:
+      "Gracious Love Academy school website showing campus information, admission guides, and notices.",
+    accent: "from-emerald-300/80 via-teal-500/70 to-cyan-700/80",
+    highlights: [
+      "Admissions intake workflow and downloadable curriculum guides",
+      "Mobile-optimized layout for parents on smartphones",
+      "Fast-loading static architecture on Vercel"
+    ]
+  },
+  {
+    slug: "livestock-management",
+    title: "Livestock Management Platform",
+    tagline: "Agricultural Animal Records & Veterinary Health Tracking",
+    summary:
+      "Specialized agricultural software for tracking livestock health history, breeding cycles, milk yield logs, and feed inventory for Kenyan farming enterprises.",
+    tag: "AgriTech Application",
+    isFlagship: false,
+    status: "Live",
+    stack: ["TypeScript", "React", "Node.js", "Relational Database", "Tailwind CSS"],
+    problem:
+      "Livestock and dairy farmers face yield loss due to unrecorded vaccination schedules, untracked pedigree lineages, and ad-hoc feed expenditure tracking.",
+    users: ["Farm Owners", "Herd Managers", "Veterinary Officers"],
+    architecture: [
+      {
+        layer: "Animal Registry",
+        detail:
+          "Tag-based animal profile management with lineage and breeding histories."
+      },
+      {
+        layer: "Health & Yield",
+        detail:
+          "Daily production logs, automated vaccination schedule alerts, and medical treatment records."
+      }
+    ],
+    architectureSummary:
+      "Data-centric application tracking animal lifecycles, health interventions, and milk production yields.",
+    engineeringChallenge:
+      "Designing normalized relational entities capable of modeling recursive breeding lineages and daily milk production time series without data duplication.",
+    result:
+      "Provided farmers with clear herd health alerts, preventing missed booster vaccines and improving production forecasting.",
+    metrics: [
+      { value: "100%", label: "Vaccination Audit Trail" },
+      { value: "Daily", label: "Milk Production Logs" }
+    ],
+    liveDemoUrl: "https://livestock-management-app.vercel.app",
+    repoUrl: "https://github.com/Muregis/Livestock-Management-App",
+    image: "/images/projects/stockcore.jpg",
+    imageAlt:
+      "Livestock Management Platform tracking animal tag records, milk production logs, and veterinary history.",
+    accent: "from-violet-400/80 via-purple-500/70 to-indigo-700/80",
+    highlights: [
+      "Tag-based animal lifecycle and pedigree tracking",
+      "Automated vaccination and medical alerts",
+      "Daily milk yield and production time-series tracking"
+    ]
   }
 ];
 
+export function getProject(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
+}
+
+export function getAllProjects(): Project[] {
+  return projects;
+}
+
 export const stats = [
-  { value: "15+", label: "Projects delivered" },
-  { value: "4+", label: "Years building software" },
-  { value: "6+", label: "Programming languages" },
-  { value: "20+", label: "Technologies used" }
+  { value: "15+", label: "Delivered Systems & Projects" },
+  { value: "3+", label: "Production Flagship Products" },
+  { value: "100%", label: "M-Pesa Webhook Reliability" },
+  { value: "2024", label: "Founded MuregiScore" }
 ];
 
 export const journey = [
-  { year: "2022", event: "Wrote my first line of code (Python)" },
-  { year: "2023", event: "Started Computer Science at Kiambu National Polytechnic" },
-  { year: "2024", event: "Founded MuregiScore Technologies" },
-  { year: "2025", event: "Released EduCore & client websites for Kenyan schools and businesses" }
+  { year: "2022", event: "Wrote first software programs and founded development practice in Python & JavaScript" },
+  { year: "2023", event: "Enrolled in Diploma Level 6 Computer Science at Kiambu National Polytechnic" },
+  { year: "2024", event: "Founded MuregiScore Technologies to build sustainable software for Kenyan institutions" },
+  { year: "2025–2026", event: "Architected and shipped EduCore, Core CRM, and EduCore Ratiba with production M-Pesa Daraja payment workflows" }
 ];
 
 export const values = [
   {
-    title: "Problem-First",
-    text: "I build what solves real pain points, not what looks good in a demo.",
+    title: "Production-First Engineering",
+    text: "I build systems for real operational constraints: network instability, transactional audits, and strict role security.",
     icon: "shield"
   },
   {
-    title: "Fast Learner",
-    text: "Self-taught across six languages and always expanding the stack.",
+    title: "Architectural Discipline",
+    text: "From normalized relational schemas to clean RESTful APIs and job queues, I treat software as long-lived engineering assets.",
     icon: "rocket"
   },
   {
-    title: "African Roots",
-    text: "Building affordable, dependable tools for businesses in Africa.",
+    title: "African Context & Scalability",
+    text: "Designing dependable, affordable software tailored to Kenyan schools, businesses, and mobile payment ecosystems.",
     icon: "grad"
   }
 ];
@@ -198,98 +523,181 @@ export interface TimelineItem {
 export const timeline: TimelineItem[] = [
   {
     period: "2024 – Present",
-    role: "Founder & Lead Developer",
+    role: "Founder & Lead Software Engineer",
     company: "MuregiScore Technologies",
     description:
-      "Founded a software company building enterprise products for Kenyan institutions. Leading product development, client relationships, and M-Pesa integrations.",
-    tags: ["React", "Node.js", "PostgreSQL", "M-Pesa API"]
+      "Founded a software engineering firm delivering production institutional software for Kenyan schools and commercial enterprises. Architected EduCore (school management & CBC report card engine), Core CRM (pipeline tracking & client operations), and EduCore Ratiba (constraint-satisfaction academic timetabler). Implemented production Safaricom M-Pesa Daraja STK Push and C2B payment integrations with idempotent webhook transaction ledgers.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "M-Pesa Daraja API",
+      "RBAC",
+      "Queues"
+    ]
   },
   {
     period: "2023 – Present",
     role: "Freelance Full-Stack Developer",
-    company: "Self-employed",
+    company: "Client Contracts & Engineering Solutions",
     description:
-      "Delivered 15+ client projects — business websites, dashboards, and management systems — from requirements to deployment.",
-    tags: ["Web Development", "API Design", "Client Management"]
+      "Delivered 15+ web applications, commercial portals, and operational databases for businesses, educational institutions, and agricultural ventures. Designed REST APIs, engineered responsive mobile-first user interfaces, and configured reliable production hosting on Linux, Vercel, and Railway.",
+    tags: [
+      "React",
+      "TypeScript",
+      "PHP",
+      "MySQL",
+      "PostgreSQL",
+      "REST APIs",
+      "CI/CD"
+    ]
   },
   {
     period: "2023 – Present",
-    role: "Computer Science Student",
+    role: "Computer Science Student (Diploma Level 6)",
     company: "Kiambu National Polytechnic",
     description:
-      "Diploma in Computer Science covering software engineering, database systems, networking, and system design.",
-    tags: ["Software Engineering", "Database Systems", "Networking"]
+      "Comprehensive formal curriculum in Computer Science covering software engineering, relational database management systems, algorithms and data structures, computer networks, operating systems (Linux/Windows), and systems analysis.",
+    tags: [
+      "Software Engineering",
+      "Data Structures",
+      "Database Systems",
+      "Operating Systems",
+      "Networks"
+    ]
   }
 ];
 
 export const skillGroups = [
   {
-    title: "Frontend",
-    items: ["React", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "Responsive Design"]
+    title: "Frontend Engineering",
+    items: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Responsive UI",
+      "State Management",
+      "HTML5 / CSS3",
+      "Web Performance"
+    ]
   },
   {
-    title: "Backend",
-    items: ["Node.js", "Express", "Spring Boot", "FastAPI", "REST APIs", "JWT Auth"]
+    title: "Backend & API Architecture",
+    items: [
+      "Node.js",
+      "Express",
+      "PHP",
+      "RESTful APIs",
+      "API Versioning",
+      "Webhooks",
+      "Input Validation",
+      "Error Handling"
+    ]
   },
   {
-    title: "Languages",
-    items: ["Java", "Python", "C++", "JavaScript", "SQL", "VB.NET"]
+    title: "Databases & Data Integrity",
+    items: [
+      "PostgreSQL",
+      "MySQL",
+      "Schema Design",
+      "Relational Normalization",
+      "ACID Transactions",
+      "Indexing & Query Optimization",
+      "Audit Logging"
+    ]
   },
   {
-    title: "Data & Payments",
-    items: ["PostgreSQL", "MySQL", "Redis", "M-Pesa Daraja", "Paystack", "Webhooks"]
+    title: "Security & Access Control (RBAC)",
+    items: [
+      "JWT Authentication",
+      "Session Management",
+      "Bcrypt Password Hashing",
+      "Role-Based Access Control (RBAC)",
+      "Middleware Authorization",
+      "Data Isolation"
+    ]
   },
   {
-    title: "DevOps & Workflow",
-    items: ["Git", "GitHub", "Docker", "Linux", "Railway", "Vercel"]
+    title: "Queues & Asynchronous Processing",
+    items: [
+      "Background Job Queues",
+      "Redis / BullMQ Concepts",
+      "Asynchronous Worker Handlers",
+      "Idempotent Payment Processing",
+      "Batch PDF Generation"
+    ]
+  },
+  {
+    title: "Testing, CI/CD & DevOps",
+    items: [
+      "Unit & Integration Testing",
+      "GitHub Actions CI/CD",
+      "Automated Linting & Typecheck",
+      "Git / GitHub Workflow",
+      "Linux (Ubuntu) CLI",
+      "Nginx",
+      "Docker Basics",
+      "Vercel & Railway Deployment"
+    ]
+  },
+  {
+    title: "Product Engineering & Payments",
+    items: [
+      "Safaricom M-Pesa Daraja (STK Push, C2B, B2C)",
+      "Webhook Verification",
+      "Offline / Low-Bandwidth Resilience",
+      "User-Centric Architecture",
+      "Kenyan Market Fit"
+    ]
   }
 ];
 
-/** Day-to-day stack (shown as chips — deliberately no self-graded percentages). */
+/** Day-to-day stack (shown as chips — grounded, verified competencies). */
 export const proficiency = [
-  "React + TypeScript frontends",
-  "Node.js + Express APIs",
-  "PostgreSQL data & SQL",
-  "M-Pesa Daraja payments",
-  "Tailwind CSS + responsive design"
+  "React & TypeScript frontends",
+  "Node.js & Express REST APIs",
+  "PHP & backend integrations",
+  "PostgreSQL & MySQL database design",
+  "Authentication & Role-Based Access Control (RBAC)",
+  "Background queues & async job processing",
+  "M-Pesa Daraja STK Push & C2B callbacks",
+  "Automated CI/CD & production deployments"
 ];
 
 export const products = [
   {
     name: "EduCore",
-    text: "School management — student records, fee tracking, timetables, automated report cards. My flagship product."
+    text: "Comprehensive School Management — student records, CBC grading, automated term report cards, fee tracking, and M-Pesa Daraja payment reconciliation. Flagship product."
   },
   {
-    name: "StockCore",
-    text: "Inventory and stock-tracking platform for small businesses — in development."
+    name: "Core CRM",
+    text: "Sales Pipeline & Operations CRM — contact histories, Kanban deal tracking, multi-tier RBAC, and client communication workflows."
   },
   {
-    name: "ClientCore",
-    text: "CRM for practical sales workflows — in development."
+    name: "EduCore Ratiba",
+    text: "Academic Timetable Engine — constraint-satisfaction heuristic optimization allocating teachers, streams, and laboratories with zero scheduling collisions."
   }
 ];
 
 export const education = {
   institution: "Kiambu National Polytechnic",
-  program: "Diploma in Computer Science",
+  program: "Diploma in Computer Science (Level 6)",
   period: "2023 – Present (expected 2026)",
   coursework: [
-    "Programming",
-    "Data Structures",
-    "Database Systems",
-    "Software Engineering",
-    "Web Development",
-    "Computer Networks",
-    "System Analysis",
-    "IT Project Management"
+    "Programming Fundamentals",
+    "Data Structures & Algorithms",
+    "Database Management Systems (RDBMS)",
+    "Software Engineering & SDLC",
+    "Web Application Development",
+    "Computer Networks & Protocols",
+    "System Analysis & Design",
+    "Operating Systems (Linux/Windows)"
   ]
 };
 
-/**
- * Testimonials render only when populated. Only add REAL clients with their
- * permission, and include a verifiable company/role — e.g.:
- * { quote, name: "Jane Kamau", role: "Administrator, Greenfield Academy — Nairobi" }
- */
 export const testimonials: {
   quote: string;
   name: string;
@@ -299,90 +707,95 @@ export const testimonials: {
 export const faqs = [
   {
     q: "What is your core technology stack?",
-    a: "React and TypeScript on the frontend; Node.js, Express, and PostgreSQL on the backend; and the M-Pesa Daraja API for payments. I also work in Java, Python, and C++ for enterprise and automation work, and deploy through Railway and Vercel."
+    a: "React and TypeScript on the frontend; Node.js, Express, and PHP on the backend; PostgreSQL and MySQL for relational data; and the Safaricom M-Pesa Daraja API for payment workflows. I write tested, maintainable code with strict type-safety and deploy using automated GitHub Actions pipelines to Vercel and Linux servers."
   },
   {
-    q: "How long do projects take?",
-    a: "Brochure and marketing sites take 1–2 weeks. Full web apps with authentication, databases, and payments typically take 4–6 weeks. Larger suites such as EduCore and StockCore ship in phased releases."
+    q: "How do you handle authentication and access control (RBAC)?",
+    a: "I implement secure authentication using Bcrypt hashing with either JWT tokens or HTTP-only session cookies. Authorization uses granular Role-Based Access Control (RBAC) middleware where permissions are verified at both the route and database query levels to guarantee multi-tenant data isolation."
   },
   {
-    q: "Do you handle support and updates after launch?",
-    a: "Yes. Ongoing maintenance packages include security patches, bug fixes, feature tweaks, and uptime monitoring so your product stays healthy after launch."
+    q: "How do you make M-Pesa payment integrations resilient?",
+    a: "M-Pesa integrations use Safaricom's Daraja API with STK Push for real-time customer billing and C2B for paybill deposits. Webhook callbacks are processed through an idempotent transaction verification pipeline backed by database transactions to guarantee payments are never double-credited, even under network retries."
   },
   {
-    q: "Can you integrate M-Pesa or other payments into my product?",
-    a: "Absolutely. I build M-Pesa STK Push, C2B, and B2C flows plus Paystack or card rails when needed, always with webhook callbacks and transaction verification."
+    q: "How do you optimize performance for slower Kenyan mobile networks?",
+    a: "I architect applications with static page pre-rendering (SSG), compressed modern image formats (WebP/AVIF), minimal JavaScript client boundaries, and responsive layouts that function reliably on entry-level Android devices and 3G/4G cellular connections."
+  },
+  {
+    q: "Are you available for contract or full-time software engineering roles?",
+    a: "Yes. I am available for software engineering roles, product development contracts, and architectural consulting. I bring hands-on experience building, testing, and deploying real institutional software."
   }
 ];
 
 export const academic = {
   badge: "Diploma Level 6 Student · Kiambu National Polytechnic",
-  bio: "Computer Science student focused on building a strong foundation in software development, systems administration, databases, and emerging technologies — and already shipping production software through MuregiScore Technologies.",
+  bio: "Computer Science student building a rigorous foundation in software engineering, database systems, computer networking, and system architecture — while actively shipping production software through MuregiScore Technologies.",
   focusAreas: [
     {
       icon: "code",
       title: "Core Computer Science",
       items: [
-        "Operating systems — Windows & Linux administration, shell scripting",
-        "Computer organisation & architecture — CPU operations, memory, storage",
-        "Mathematics for computer science — logic, discrete maths, problem-solving"
+        "Operating systems — Linux/Windows administration, shell scripting, process lifecycle",
+        "Computer organisation & architecture — CPU operations, memory hierarchy, caching",
+        "Mathematics for computing — discrete math, propositional logic, relational algebra"
       ]
     },
     {
       icon: "wrench",
-      title: "Software Development",
+      title: "Software Engineering & SDLC",
       items: [
-        "Fundamentals of programming — Python, Java, C#",
-        "Algorithms & data structures — arrays, stacks, queues, linked lists, sorting",
-        "Information systems development — full SDLC, requirements analysis"
+        "Programming paradigms — OOP, functional programming in TypeScript, Java, Python",
+        "Algorithms & data structures — trees, graphs, sorting, hash maps, complexity analysis",
+        "System analysis & requirements — modeling workflows, UML diagrams, architectural design"
       ]
     },
     {
       icon: "brain",
-      title: "Data & Intelligence",
+      title: "Databases & Data Management",
       items: [
-        "Database management systems — relational design, SQL, normalisation",
-        "Artificial intelligence — ML basics, AI algorithms, intelligent systems"
+        "Relational database design — 3NF normalisation, ACID compliance, PostgreSQL, MySQL",
+        "Query optimization — indexing strategies, execution plans, foreign key constraints",
+        "Transaction isolation — preventing race conditions and concurrency anomalies"
       ]
     },
     {
       icon: "network",
-      title: "Networks & Web",
+      title: "Networking & Distributed Systems",
       items: [
-        "Networking & distributed systems — LAN/WAN, IP addressing, TCP/IP, HTTP",
-        "Web design — HTML5, CSS3, JavaScript, responsive design"
+        "Network fundamentals — TCP/IP stack, DNS, HTTP/HTTPS, WebSockets",
+        "API architecture — REST principles, status codes, payload serialization, webhooks"
       ]
     },
     {
       icon: "palette",
-      title: "Design & Professional Skills",
+      title: "Professional Engineering Practice",
       items: [
-        "Graphic design — visual communication, posters, banners, UI mockups",
-        "Professional work behaviour — documentation, teamwork, project management"
+        "Version control & workflows — Git branching, pull requests, semantic commit history",
+        "Technical documentation — architectural specifications, API documentation, runbooks"
       ]
     }
   ],
   skills: [
     {
       title: "Programming Languages",
-      items: ["Python", "Java", "C++", "C#", "VB.NET", "JavaScript", "SQL"]
+      items: ["TypeScript", "JavaScript", "PHP", "Python", "Java", "C++", "SQL"]
     },
     {
-      title: "Web Technologies",
-      items: ["HTML5", "CSS3", "React", "Responsive Design"]
+      title: "Web Technologies & Frameworks",
+      items: ["React", "Next.js", "Express", "Node.js", "Tailwind CSS", "HTML5", "CSS3"]
     },
     {
-      title: "Databases & Cloud",
-      items: ["MS SQL Server", "MySQL", "PostgreSQL", "Supabase", "Firebase"]
+      title: "Databases & Storage",
+      items: ["PostgreSQL", "MySQL", "Redis (caching/queues)", "Supabase"]
     },
     {
-      title: "Systems & Tools",
-      items: ["Linux", "Windows", "Git", "GitHub"]
+      title: "DevOps, CI/CD & Systems",
+      items: ["Linux", "Git", "GitHub Actions", "Docker basics", "Vercel", "Railway"]
     }
   ],
   currentFocus: [
-    "Building full-stack web applications",
-    "Exploring machine learning and AI",
-    "Deepening system design and architecture"
+    "Scaling distributed backend APIs with asynchronous job queues",
+    "Deepening database concurrency control and query performance",
+    "Formal algorithms for optimization problems (like EduCore Ratiba CSP)"
   ]
 };

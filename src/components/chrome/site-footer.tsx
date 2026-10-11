@@ -20,7 +20,8 @@ const socialLinks = [
 
 const exploreLinks = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/#projects" },
+  { label: "Flagship Projects", href: "/#projects" },
+  { label: "Systems Architecture", href: "/#engineering" },
   { label: "Experience", href: "/#experience" },
   { label: "Academic Portfolio", href: "/academic" }
 ];
@@ -45,13 +46,13 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
-              Full-stack developer building web software for Kenyan schools
+              Full-stack software engineer building web systems for Kenyan schools
               and businesses — management systems, websites, and M-Pesa payments.
             </p>
             <ul className="mt-5 flex gap-3" aria-label="Social profiles">
               {socialLinks.map(({ label, href, Icon }) => (
                 <li key={label}>
-                  <Link
+                  <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -59,7 +60,7 @@ export function SiteFooter() {
                     className="inline-flex rounded-full border border-white/10 bg-white/5 p-2.5 text-slate-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-200"
                   >
                     <Icon className="h-4 w-4" />
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
