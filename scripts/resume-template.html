@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Victor Muregi — Software Engineer Resume</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 14mm 16mm 14mm 16mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.45;
+      font-size: 9.5pt;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: #0284c7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .header {
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+    .name {
+      font-size: 24pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #0284c7;
+      margin-top: 3px;
+      letter-spacing: 0.2px;
+    }
+    .contact-bar {
+      margin-top: 7px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 8.5pt;
+      color: #475569;
+    }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .contact-item strong {
+      color: #0f172a;
+    }
+    .section {
+      margin-bottom: 11px;
+    }
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .summary-text {
+      font-size: 9pt;
+      color: #334155;
+      line-height: 1.45;
+      text-align: justify;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 4px 10px;
+      font-size: 8.8pt;
+    }
+    .skill-cat {
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .skill-list {
+      color: #334155;
+    }
+    .job {
+      margin-bottom: 9px;
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .job-role {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .job-company {
+      font-weight: 600;
+      color: #0284c7;
+    }
+    .job-date {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .job-subhead {
+      font-size: 8.5pt;
+      font-style: italic;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+    ul.bullets {
+      list-style-type: disc;
+      padding-left: 14px;
+      margin-top: 3px;
+    }
+    ul.bullets li {
+      font-size: 8.8pt;
+      color: #334155;
+      margin-bottom: 3px;
+      line-height: 1.38;
+    }
+    ul.bullets li strong {
+      color: #0f172a;
+    }
+    .project-card {
+      margin-bottom: 8px;
+      padding-left: 6px;
+      border-left: 2px solid #e2e8f0;
+    }
+    .project-card:hover {
+      border-left-color: #0284c7;
+    }
+    .project-title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .project-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .project-stack {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #0284c7;
+    }
+    .project-desc {
+      font-size: 8.7pt;
+      color: #334155;
+      line-height: 1.35;
+      margin-bottom: 3px;
+    }
+    .project-links {
+      font-size: 8pt;
+      color: #64748b;
+    }
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .edu-degree {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .edu-school {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #0284c7;
+    }
+    .edu-date {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .edu-coursework {
+      font-size: 8.5pt;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <header class="header">
+    <h1 class="name">VICTOR MUREGI</h1>
+    <div class="title">Full-Stack Software Engineer &amp; Founder · Systems, APIs &amp; Payments</div>
+    <div class="contact-bar">
+      <span class="contact-item"><strong>Location:</strong> Nairobi, Kenya</span>
+      <span class="contact-item"><strong>Phone:</strong> +254 797 846 126</span>
+      <span class="contact-item"><strong>Email:</strong> <a href="mailto:i.am.muregi@gmail.com">i.am.muregi@gmail.com</a></span>
+      <span class="contact-item"><strong>Portfolio:</strong> <a href="https://personal-portfolio-muregis-projects.vercel.app">personal-portfolio-muregis-projects.vercel.app</a></span>
+      <span class="contact-item"><strong>GitHub:</strong> <a href="https://github.com/Muregis">github.com/Muregis</a></span>
+      <span class="contact-item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/victor-muregi">linkedin.com/in/victor-muregi</a></span>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section class="section">
+    <h2 class="section-title">Professional Summary</h2>
+    <p class="summary-text">
+      Production-focused <strong>Full-Stack Software Engineer</strong> and founder of <strong>MuregiScore Technologies</strong> with 3+ years of experience architecting and shipping mission-critical institutional software. Proven track record building end-to-end multi-tenant systems in <strong>React, TypeScript, Node.js/Express, PHP, and PostgreSQL/MySQL</strong>. Experienced solving complex operational challenges: idempotent <strong>Safaricom M-Pesa Daraja payment workflows</strong>, granular <strong>Role-Based Access Control (RBAC)</strong>, <strong>background worker queues</strong>, and <strong>Constraint Satisfaction (CSP) timetabling algorithms</strong>. Adept at engineering resilient applications optimized for entry-level mobile devices and spotty network bandwidth across Africa.
+    </p>
+  </section>
+
+  <!-- TECHNICAL COMPETENCIES -->
+  <section class="section">
+    <h2 class="section-title">Technical Competencies</h2>
+    <div class="skills-grid">
+      <div class="skill-cat">Languages</div>
+      <div class="skill-list">TypeScript, JavaScript, PHP, SQL, Python, Java, C++</div>
+
+      <div class="skill-cat">Frontend Architecture</div>
+      <div class="skill-list">React 19, Next.js, Tailwind CSS, Responsive Design, State Management, HTML5, CSS3, Web Performance</div>
+
+      <div class="skill-cat">Backend &amp; APIs</div>
+      <div class="skill-list">Node.js, Express.js, PHP, RESTful APIs, Webhook Ingestion, API Versioning, Error Handling, Middleware</div>
+
+      <div class="skill-cat">Databases &amp; Integrity</div>
+      <div class="skill-list">PostgreSQL, MySQL, 3NF Normalization, Indexing &amp; Query Optimization, ACID Transactions, Audit Ledgers</div>
+
+      <div class="skill-cat">Security &amp; RBAC</div>
+      <div class="skill-list">Granular Role-Based Access Control (RBAC), JWT Authentication, Session Cookies, Bcrypt, Data Isolation</div>
+
+      <div class="skill-cat">Queues &amp; Asynchronous</div>
+      <div class="skill-list">Background Job Queues (Redis/BullMQ patterns), Asynchronous Workers, Batch Report Generators</div>
+
+      <div class="skill-cat">Payment Integrations</div>
+      <div class="skill-list">Safaricom M-Pesa Daraja API (STK Push, C2B, B2C, Idempotent Callback Verification), Paystack</div>
+
+      <div class="skill-cat">DevOps &amp; Tooling</div>
+      <div class="skill-list">Git, GitHub, GitHub Actions CI/CD, Linux (Ubuntu), Nginx, Docker (basics), Vercel, Railway</div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section class="section">
+    <h2 class="section-title">Engineering Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-role">Founder &amp; Lead Software Engineer</span>
+        <span class="job-date">2024 – Present</span>
+      </div>
+      <div class="job-subhead"><span class="job-company">MuregiScore Technologies</span> · Nairobi, Kenya</div>
+      <ul class="bullets">
+        <li>Founded engineering firm delivering institutional enterprise web systems and fintech integrations for Kenyan schools and commercial SMEs.</li>
+        <li>Architected, developed, and deployed 3 flagship production platforms: <strong>EduCore</strong> (school operations &amp; CBC report cards), <strong>Core CRM</strong> (sales pipeline &amp; customer intelligence), and <strong>EduCore Ratiba</strong> (combinatorial timetable scheduling engine).</li>
+        <li>Engineered Safaricom <strong>M-Pesa Daraja STK Push and C2B payment integrations</strong> with idempotent webhook listeners and database transaction locks, guaranteeing <strong>zero double-crediting</strong> under spotty mobile cellular connections.</li>
+        <li>Established automated CI/CD deployment pipelines on <strong>GitHub Actions</strong> enforcing TypeScript compilation, ESLint, and automated builds to Vercel and Linux servers.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-role">Freelance Full-Stack Developer</span>
+        <span class="job-date">2023 – Present</span>
+      </div>
+      <div class="job-subhead"><span class="job-company">Client Solutions &amp; Engineering Contracts</span> · Nairobi / Remote</div>
+      <ul class="bullets">
+        <li>Delivered <strong>15+ web applications, portals, and database systems</strong> from client requirements gathering to production hosting.</li>
+        <li>Architected <strong>Sawa Solar Solution</strong> (commercial clean-energy platform with instant WhatsApp quotation bridge) and <strong>Gracious Love Academy</strong> (institutional admissions portal).</li>
+        <li>Built <strong>Livestock Management Platform</strong>, modeling recursive breeding lineages and daily milk yield tracking.</li>
+        <li>Optimized frontend assets and bundle sizes to achieve <strong>sub-second First Contentful Paint (FCP)</strong> on low-spec Android devices.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== PAGE BREAK ==================== -->
+  <div class="page-break"></div>
+
+  <!-- FLAGSHIP PROJECTS & CASE STUDIES -->
+  <section class="section">
+    <h2 class="section-title">Flagship Systems &amp; Engineering Projects</h2>
+
+    <!-- EDUCORE -->
+    <div class="project-card">
+      <div class="project-title-bar">
+        <span class="project-title">EduCore — Comprehensive School Operations System</span>
+        <span class="project-stack">React · TypeScript · Node/Express · PostgreSQL · M-Pesa API</span>
+      </div>
+      <p class="project-desc">
+        Multi-tenant institutional administration platform powering student records, CBC grading, automated term report cards, fee tracking, and M-Pesa payment reconciliation for Kenyan primary and secondary schools.
+      </p>
+      <ul class="bullets">
+        <li><strong>Idempotent Payment Engine:</strong> Handled Safaricom M-Pesa STK Push callbacks with database transactions, eliminating duplicate receipts and keeping student ledgers <strong>100% reconciled in real time</strong>.</li>
+        <li><strong>Batch Report-Card Generation:</strong> Optimized automated PDF report card compilation for hundreds of student records from minutes to <strong>2.3 seconds</strong> without blocking the Node.js event loop.</li>
+        <li><strong>Role-Based Access Control (RBAC):</strong> Enforced 5-tier granular authorization separating Administrator, Principal, Teacher, Bursar, and Guardian access boundaries.</li>
+        <li><span class="project-links">Live: <a href="https://educore-school-management-system-pi.vercel.app">educore-school-management-system-pi.vercel.app</a> · Repo: <a href="https://github.com/Muregis/educore-school-management-system">github.com/Muregis/educore-school-management-system</a></span></li>
+      </ul>
+    </div>
+
+    <!-- CORE CRM -->
+    <div class="project-card">
+      <div class="project-title-bar">
+        <span class="project-title">Core CRM — Sales Pipeline &amp; Customer Intelligence Engine</span>
+        <span class="project-stack">React · TypeScript · Node/Express · PostgreSQL · REST APIs</span>
+      </div>
+      <p class="project-desc">
+        Customer operations and deal pipeline platform built for Kenyan SMEs to eliminate lost sales inquiries across scattered WhatsApp threads and notebooks.
+      </p>
+      <ul class="bullets">
+        <li><strong>Interactive Kanban Pipeline:</strong> Developed drag-and-drop deal stage management with automated follow-up reminders, increasing lead conversion visibility to <strong>100%</strong>.</li>
+        <li><strong>High-Performance Relational Schema:</strong> Engineered normalized PostgreSQL models for organizations, contacts, deals, and communication logs with <strong>&lt;50ms query response latency</strong> on complex joins.</li>
+        <li><strong>Multi-User Data Isolation:</strong> Designed 4-tier hierarchical permissions ensuring sales representatives only access assigned prospects while executives view organization-wide metrics.</li>
+        <li><span class="project-links">Source Code: <a href="https://github.com/Muregis/Core-Crm-model">github.com/Muregis/Core-Crm-model</a></span></li>
+      </ul>
+    </div>
+
+    <!-- EDUCORE RATIBA -->
+    <div class="project-card">
+      <div class="project-title-bar">
+        <span class="project-title">EduCore Ratiba — Constraint-Satisfaction Timetable Engine</span>
+        <span class="project-stack">TypeScript · React · Node.js · CSP Algorithms · Export Engines</span>
+      </div>
+      <p class="project-desc">
+        Intelligent academic schedule optimization engine that solves the multi-constraint timetabling problem for schools and polytechnics.
+      </p>
+      <ul class="bullets">
+        <li><strong>Combinatorial CSP Engine:</strong> Formulated timetabling as a Constraint Satisfaction Problem utilizing heuristic backtracking and constraint propagation to eliminate teacher and room collisions.</li>
+        <li><strong>Rapid Computation:</strong> Reduced timetable compilation cycle from <strong>4–5 days of tedious manual drafting to under 3 seconds</strong> for 40 multi-subject streams with <strong>0 clashes</strong>.</li>
+        <li><strong>Multi-Format Sync:</strong> Generated printable master school timetables, class schedules, and teacher workload cards with direct export and EduCore synchronization.</li>
+        <li><span class="project-links">Live: <a href="https://educoreratiba.vercel.app">educoreratiba.vercel.app</a> · Repo: <a href="https://github.com/Muregis/Educore-Ratiba">github.com/Muregis/Educore-Ratiba</a></span></li>
+      </ul>
+    </div>
+
+    <!-- SELECTED SECONDARY WORK -->
+    <div class="project-card">
+      <div class="project-title-bar">
+        <span class="project-title">Commercial &amp; Domain Systems (Selected Client Work)</span>
+        <span class="project-stack">HTML5 · CSS3 · TypeScript · Bootstrap · Vercel</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Sawa Solar Solution:</strong> Mobile-first clean-energy commercial portal with WhatsApp quote-dispatch integration (<a href="https://sawa-solar-solution-website.vercel.app">Live Demo</a>).</li>
+        <li><strong>Gracious Love Academy:</strong> Institutional portal publishing fee breakdowns, curricula, and admissions workflows (<a href="https://graciousloveacademy-school-website.vercel.app">Live Demo</a>).</li>
+        <li><strong>Livestock Management Platform:</strong> Agricultural animal records application tracking vaccination histories and daily milk production (<a href="https://livestock-management-app.vercel.app">Live Demo</a>).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION & CREDENTIALS -->
+  <section class="section">
+    <h2 class="section-title">Education &amp; Academic Credentials</h2>
+    <div class="edu-item">
+      <div>
+        <span class="edu-degree">Diploma in Computer Science (Level 6)</span> — 
+        <span class="edu-school">Kiambu National Polytechnic</span>
+      </div>
+      <span class="edu-date">2023 – Present (Expected 2026)</span>
+    </div>
+    <div class="edu-coursework">
+      <strong>Core Coursework:</strong> Software Engineering &amp; SDLC, Data Structures &amp; Algorithms, Relational Database Management Systems (RDBMS), Operating Systems (Linux &amp; Windows), Computer Networks &amp; Distributed Protocols, System Analysis &amp; Design, Web Application Development.
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section class="section">
+    <h2 class="section-title">Awards &amp; Technical Recognition</h2>
+    <ul class="bullets">
+      <li><strong>Top 5 Innovator, Kiambu Polytechnic Innovation Challenge (2024):</strong> Awarded for designing and demonstrating EduCore School Management System.</li>
+      <li><strong>Safaricom Daraja API Implementer:</strong> Recognized for production STK Push and C2B transaction ledger resilience under mobile network retries.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

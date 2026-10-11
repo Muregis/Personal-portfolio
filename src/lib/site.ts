@@ -54,6 +54,7 @@ export const nav = {
     { label: "Projects", href: "/#projects" },
     { label: "Engineering", href: "/#engineering" },
     { label: "Experience", href: "/#experience" },
+    { label: "CV / Resume", href: "/cv" },
     { label: "Academic", href: "/academic" },
     { label: "Contact", href: "/#contact" }
   ]

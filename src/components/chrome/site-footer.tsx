@@ -22,6 +22,7 @@ const exploreLinks = [
   { label: "Home", href: "/" },
   { label: "Flagship Projects", href: "/#projects" },
   { label: "Systems Architecture", href: "/#engineering" },
+  { label: "Curriculum Vitae (CV)", href: "/cv" },
   { label: "Experience", href: "/#experience" },
   { label: "Academic Portfolio", href: "/academic" }
 ];
