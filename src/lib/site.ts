@@ -392,7 +392,17 @@ export const products = [
 export const education = {
   institution: "Kiambu National Polytechnic",
   program: "Diploma in Computer Science (Level 6)",
-  focus: "Software engineering, databases, and systems analysis"
+  period: "2023 – Present (expected 2026)",
+  coursework: [
+    "Programming Fundamentals",
+    "Data Structures & Algorithms",
+    "Database Management Systems (RDBMS)",
+    "Software Engineering & SDLC",
+    "Web Application Development",
+    "Computer Networks & Protocols",
+    "System Analysis & Design",
+    "Operating Systems (Linux/Windows)"
+  ]
 };
 
 export const testimonials: { quote: string; name: string; role: string }[] = [];
@@ -413,16 +423,16 @@ export const faqs = [
 ];
 
 export const academic = {
-  institution: "Kiambu National Polytechnic",
-  program: "Diploma in Computer Science (Level 6)",
-  modules: [
+  badge: "Diploma Level 6 Student · Kiambu National Polytechnic",
+  bio: "Computer Science student building a foundation in software engineering, databases, networking, and systems — while shipping real systems through MuregiScore Technologies.",
+  focusAreas: [
     {
       icon: "code",
       title: "Core Computer Science",
       items: [
-        "Operating systems — Linux/Windows administration, shell scripting",
-        "Computer organisation & architecture",
-        "Mathematics for computing — discrete math, logic, relational algebra"
+        "Operating systems — Linux/Windows administration, shell scripting, process lifecycle",
+        "Computer organisation & architecture — CPU operations, memory hierarchy, caching",
+        "Mathematics for computing — discrete math, propositional logic, relational algebra"
       ]
     },
     {
@@ -430,35 +440,53 @@ export const academic = {
       title: "Software Engineering & SDLC",
       items: [
         "Programming paradigms — OOP and TypeScript/JavaScript practice",
-        "Algorithms & data structures",
-        "System analysis & requirements modeling"
+        "Algorithms & data structures — trees, graphs, sorting, hash maps, complexity analysis",
+        "System analysis & requirements — modeling workflows and architectural design"
       ]
     },
     {
       icon: "brain",
       title: "Databases & Data Management",
       items: [
-        "Relational design — normalisation, PostgreSQL, MySQL",
-        "Query optimization and constraints",
-        "Transaction basics and integrity"
+        "Relational database design — normalisation, PostgreSQL, MySQL",
+        "Query optimization — indexing strategies, foreign key constraints",
+        "Transaction basics and data integrity"
       ]
     },
     {
       icon: "network",
-      title: "Networking & APIs",
-      items: ["TCP/IP, HTTP/HTTPS, DNS", "REST APIs, status codes, webhooks"]
+      title: "Networking & Distributed Systems",
+      items: [
+        "Network fundamentals — TCP/IP stack, DNS, HTTP/HTTPS",
+        "API architecture — REST principles, status codes, webhooks"
+      ]
     },
     {
       icon: "palette",
-      title: "Professional Practice",
-      items: ["Git workflows and pull requests", "Technical documentation and runbooks"]
+      title: "Professional Engineering Practice",
+      items: [
+        "Version control & workflows — Git branching, pull requests",
+        "Technical documentation — architecture notes and API docs"
+      ]
     }
   ],
   skills: [
-    { title: "Programming Languages", items: ["TypeScript", "JavaScript", "PHP", "SQL"] },
-    { title: "Web Technologies & Frameworks", items: ["React", "Next.js", "Express", "Node.js", "Tailwind CSS"] },
-    { title: "Databases & Storage", items: ["PostgreSQL", "MySQL", "Redis", "Supabase"] },
-    { title: "DevOps, CI/CD & Systems", items: ["Linux", "Git", "GitHub Actions", "Docker basics", "Vercel", "Render"] }
+    {
+      title: "Programming Languages",
+      items: ["TypeScript", "JavaScript", "PHP", "Python", "SQL"]
+    },
+    {
+      title: "Web Technologies & Frameworks",
+      items: ["React", "Next.js", "Express", "Node.js", "Tailwind CSS", "HTML5", "CSS3"]
+    },
+    {
+      title: "Databases & Storage",
+      items: ["PostgreSQL", "MySQL", "Redis (caching/queues)", "Supabase"]
+    },
+    {
+      title: "DevOps, CI/CD & Systems",
+      items: ["Linux", "Git", "GitHub Actions", "Docker basics", "Vercel", "Render"]
+    }
   ],
   currentFocus: [
     "Backend APIs with asynchronous job queues",
