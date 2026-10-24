@@ -4,7 +4,7 @@ Building web software, systems & payment solutions for Kenyan institutions
 
 Nairobi, Kenya | +254 797 846 126 | i.am.muregi@gmail.com
 GitHub: github.com/Muregis | LinkedIn: linkedin.com/in/victor-muregi
-Portfolio: personal-portfolio-muregis-projects.vercel.app
+Portfolio: personal-portfolio-ochre-seven-62.vercel.app
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -62,11 +62,11 @@ SELF-TAUGHT ENGINEERING FOUNDATION | 2022 - Present
 
 FLAGSHIP SYSTEMS & SELECTED PROJECTS
 
-• EduCore - School operations & CBC report card system with M-Pesa Daraja
+• EduCore - Multi-tenant school operations & CBC grading SaaS (Supabase PostgreSQL, M-Pesa, Paystack)
   (Live: educore-school-management-system-pi.vercel.app | Repo: github.com/Muregis/educore-school-management-system)
-• Core CRM - Sales pipeline, contact intelligence & RBAC operations
-  (Live: github.com/Muregis/Core-Crm-model)
-• EduCore Ratiba - Constraint-driven academic timetabling & room allocation engine
+• Core CRM - Multi-tenant SME CRM & pipeline platform with BullMQ/Redis worker queues (MySQL, Node/Express, Jest)
+  (Repo: github.com/Muregis/Core-Crm-model)
+• EduCore Ratiba - Whole-school timetable engine for CBC/8-4-4 using FET solver (PHP 8+, MySQL, Dompdf, CI tests)
   (Live: educoreratiba.vercel.app | Repo: github.com/Muregis/Educore-Ratiba)
 • Sawa Solar Solution - Commercial solar platform & quoting bridge
   (Live: sawa-solar-solution-website.vercel.app | Repo: github.com/Muregis/Sawa-solar--solution-website)

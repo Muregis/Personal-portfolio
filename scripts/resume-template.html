@@ -216,7 +216,7 @@
       <span class="contact-item"><strong>Location:</strong> Nairobi, Kenya</span>
       <span class="contact-item"><strong>Phone:</strong> +254 797 846 126</span>
       <span class="contact-item"><strong>Email:</strong> <a href="mailto:i.am.muregi@gmail.com">i.am.muregi@gmail.com</a></span>
-      <span class="contact-item"><strong>Portfolio:</strong> <a href="https://personal-portfolio-muregis-projects.vercel.app">personal-portfolio-muregis-projects.vercel.app</a></span>
+      <span class="contact-item"><strong>Portfolio:</strong> <a href="https://personal-portfolio-ochre-seven-62.vercel.app">personal-portfolio-ochre-seven-62.vercel.app</a></span>
       <span class="contact-item"><strong>GitHub:</strong> <a href="https://github.com/Muregis">github.com/Muregis</a></span>
       <span class="contact-item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/victor-muregi">linkedin.com/in/victor-muregi</a></span>
     </div>
@@ -303,16 +303,16 @@
     <!-- EDUCORE -->
     <div class="project-card">
       <div class="project-title-bar">
-        <span class="project-title">EduCore — Comprehensive School Operations System</span>
-        <span class="project-stack">React · TypeScript · Node/Express · PostgreSQL · M-Pesa API</span>
+        <span class="project-title">EduCore — Multi-Tenant School Management SaaS</span>
+        <span class="project-stack">React 18 · Vite · Node/Express · Supabase PostgreSQL · M-Pesa API</span>
       </div>
       <p class="project-desc">
-        Multi-tenant institutional administration platform powering student records, CBC grading, automated term report cards, fee tracking, and M-Pesa payment reconciliation for Kenyan primary and secondary schools.
+        Multi-tenant institutional administration SaaS powering student records, CBC grading, fee tracking, and M-Pesa payment reconciliation for Kenyan schools with strict per-school data isolation.
       </p>
       <ul class="bullets">
+        <li><strong>Multi-Tenant Data Isolation:</strong> Designed composite tenant boundaries scoped by <code>school_id</code> on Supabase PostgreSQL, preventing cross-school data leaks across multi-campus deployments.</li>
         <li><strong>Idempotent Payment Engine:</strong> Handled Safaricom M-Pesa STK Push callbacks with database transactions, eliminating duplicate receipts and keeping student ledgers <strong>100% reconciled in real time</strong>.</li>
-        <li><strong>Batch Report-Card Generation:</strong> Optimized automated PDF report card compilation for hundreds of student records from minutes to <strong>2.3 seconds</strong> without blocking the Node.js event loop.</li>
-        <li><strong>Role-Based Access Control (RBAC):</strong> Enforced 5-tier granular authorization separating Administrator, Principal, Teacher, Bursar, and Guardian access boundaries.</li>
+        <li><strong>Role-Based Access Control (RBAC):</strong> Enforced granular authorization separating Administrator, Principal, Teacher, Bursar, and Guardian access boundaries with automated Jest test coverage.</li>
         <li><span class="project-links">Live: <a href="https://educore-school-management-system-pi.vercel.app">educore-school-management-system-pi.vercel.app</a> · Repo: <a href="https://github.com/Muregis/educore-school-management-system">github.com/Muregis/educore-school-management-system</a></span></li>
       </ul>
     </div>
@@ -320,16 +320,16 @@
     <!-- CORE CRM -->
     <div class="project-card">
       <div class="project-title-bar">
-        <span class="project-title">Core CRM — Sales Pipeline &amp; Customer Intelligence Engine</span>
-        <span class="project-stack">React · TypeScript · Node/Express · PostgreSQL · REST APIs</span>
+        <span class="project-title">Core CRM — Multi-Tenant SME Operations &amp; Pipeline Platform</span>
+        <span class="project-stack">React 18 · Node/Express · MySQL · Redis · BullMQ · Jest/Supertest</span>
       </div>
       <p class="project-desc">
-        Customer operations and deal pipeline platform built for Kenyan SMEs to eliminate lost sales inquiries across scattered WhatsApp threads and notebooks.
+        Multi-tenant customer operations platform for Kenyan SMEs, SACCOs, and brokers featuring lead pipelines, localized fields, and asynchronous background worker queues.
       </p>
       <ul class="bullets">
-        <li><strong>Interactive Kanban Pipeline:</strong> Developed drag-and-drop deal stage management with automated follow-up reminders, increasing lead conversion visibility to <strong>100%</strong>.</li>
-        <li><strong>High-Performance Relational Schema:</strong> Engineered normalized PostgreSQL models for organizations, contacts, deals, and communication logs with <strong>&lt;50ms query response latency</strong> on complex joins.</li>
-        <li><strong>Multi-User Data Isolation:</strong> Designed 4-tier hierarchical permissions ensuring sales representatives only access assigned prospects while executives view organization-wide metrics.</li>
+        <li><strong>Async Job Queue Architecture:</strong> Engineered BullMQ + Redis background worker pipeline for report generation and exports, returning <code>202 Accepted</code> job IDs with polling status endpoints to prevent event loop blocking.</li>
+        <li><strong>Tenant Isolation &amp; Relational Schema:</strong> Built normalized MySQL 8+ schemas with tenant-scoped queries (<code>tenant_id</code>), automated migrations, and SQLite fallback for local and CI testing.</li>
+        <li><strong>Automated Testing &amp; CI:</strong> Implemented comprehensive Jest and Supertest integration test suites executed on GitHub Actions CI verifying auth, RBAC guards, and pipeline transitions.</li>
         <li><span class="project-links">Source Code: <a href="https://github.com/Muregis/Core-Crm-model">github.com/Muregis/Core-Crm-model</a></span></li>
       </ul>
     </div>
@@ -337,16 +337,16 @@
     <!-- EDUCORE RATIBA -->
     <div class="project-card">
       <div class="project-title-bar">
-        <span class="project-title">EduCore Ratiba — Constraint-Satisfaction Timetable Engine</span>
-        <span class="project-stack">TypeScript · React · Node.js · CSP Algorithms · Export Engines</span>
+        <span class="project-title">EduCore Ratiba — Whole-School Timetable Engine</span>
+        <span class="project-stack">PHP 8+ · MySQL/PostgreSQL · FET Solver · Docker · Dompdf</span>
       </div>
       <p class="project-desc">
-        Intelligent academic schedule optimization engine that solves the multi-constraint timetabling problem for schools and polytechnics.
+        Automated academic scheduling system that solves the multi-constraint timetabling problem for Kenyan CBC and 8-4-4 schools using the open-source FET solver engine.
       </p>
       <ul class="bullets">
-        <li><strong>Combinatorial CSP Engine:</strong> Formulated timetabling as a Constraint Satisfaction Problem utilizing heuristic backtracking and constraint propagation to eliminate teacher and room collisions.</li>
-        <li><strong>Rapid Computation:</strong> Reduced timetable compilation cycle from <strong>4–5 days of tedious manual drafting to under 3 seconds</strong> for 40 multi-subject streams with <strong>0 clashes</strong>.</li>
-        <li><strong>Multi-Format Sync:</strong> Generated printable master school timetables, class schedules, and teacher workload cards with direct export and EduCore synchronization.</li>
+        <li><strong>Whole-School Solver Integration:</strong> Integrated FET constraint solver with PHP 8+ to solve whole-school schedules across shared teachers, multi-stream grade allocations, and room capacity limits in a single generation pass.</li>
+        <li><strong>Conflict Validation &amp; Pre-Flight Checks:</strong> Built pre-flight workload checks and live clash detection routines preventing teacher, room, and class collisions during manual schedule adjustments.</li>
+        <li><strong>Export &amp; School Isolation:</strong> Delivered multi-school data isolation, print-ready timetable exports via Dompdf, and RESTful export endpoints designed for EduCore synchronization.</li>
         <li><span class="project-links">Live: <a href="https://educoreratiba.vercel.app">educoreratiba.vercel.app</a> · Repo: <a href="https://github.com/Muregis/Educore-Ratiba">github.com/Muregis/Educore-Ratiba</a></span></li>
       </ul>
     </div>
