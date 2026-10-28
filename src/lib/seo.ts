@@ -11,7 +11,7 @@ export const shareImage = {
 };
 
 const description =
-  "Victor Muregi is a full-stack software engineer and founder of MuregiScore Technologies in Nairobi, Kenya. Engineering robust systems with React, TypeScript, Node/Express, PHP, PostgreSQL/MySQL, RBAC, queues, and M-Pesa Daraja payment workflows.";
+  "Victor Muregi is a full-stack engineer and founder of MuregiScore Technologies in Nairobi, Kenya, building React, Node, PostgreSQL, and M-Pesa web systems.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(site.url),

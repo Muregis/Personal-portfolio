@@ -28,7 +28,7 @@ import { breadcrumbSchema, personSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Computer Science Portfolio & Academic Work",
   description:
-    "Academic portfolio for Victor Muregi — Diploma Level 6 Computer Science student at Kiambu National Polytechnic. Coursework in software development, databases, networking, AI, and systems.",
+    "Academic portfolio of Victor Muregi, CS student at Kiambu National Polytechnic. Coursework in systems, databases, networking, and software engineering.",
   alternates: { canonical: "/academic" },
   openGraph: {
     type: "profile",

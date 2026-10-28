@@ -26,7 +26,7 @@ import { personSchema, breadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Curriculum Vitae (CV) & Resume | Victor Muregi",
   description:
-    "CV of Victor Muregi — Full-Stack Developer & Founder of MuregiScore Technologies (Nairobi). EduCore, Core CRM, EduCore Ratiba; React, Node/Express, PHP, multi-tenancy, RBAC, BullMQ, M-Pesa patterns.",
+    "CV of Victor Muregi, Full-Stack Developer & Founder of MuregiScore Technologies (Nairobi). React, Node, PHP, multi-tenant SaaS, RBAC, and M-Pesa patterns.",
   alternates: {
     canonical: "/cv"
   },
