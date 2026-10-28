@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 const atsPlainText = `VICTOR MUREGI
 Full-Stack Developer & Founder · Multi-tenant systems, APIs & payments
 Nairobi, Kenya | +254 797 846 126 | i.am.muregi@gmail.com
-Portfolio: personal-portfolio-ochre-seven-62.vercel.app
+Portfolio: portfolio.muregiscore.me
 GitHub: github.com/Muregis | LinkedIn: linkedin.com/in/victor-muregi
 
 SUMMARY
