@@ -14,7 +14,7 @@ export const site = {
   // Stable public deployment. Override per environment with NEXT_PUBLIC_SITE_URL.
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
-    "https://personal-portfolio-ochre-seven-62.vercel.app",
+    "https://portfolio.muregiscore.me",
   email: "i.am.muregi@gmail.com",
   phoneDisplay: "+254 797 846 126",
   phoneE164: "+254797846126",

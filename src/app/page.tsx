@@ -210,7 +210,7 @@ export default function HomePage() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-[0.08]"
             style={{
-              backgroundImage: `url(${site.logo.png})`,
+              backgroundImage: `url(${site.logo.svg})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               backgroundSize: "420px auto"

@@ -16,6 +16,7 @@ export function BrandMark({
         alt="MuregiScore Technologies logo"
         width={40}
         height={40}
+        priority
         className={cn(
           "h-full w-full rounded-xl border border-white/10 bg-white/5 object-contain p-1",
           imgClassName

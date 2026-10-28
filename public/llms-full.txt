@@ -1,0 +1,102 @@
+# Victor Muregi - Comprehensive Entity & Engineering Dossier
+
+> Canonical Portfolio: https://portfolio.muregiscore.me  
+> Contact: i.am.muregi@gmail.com | +254 797 846 126  
+> Location: Nairobi, Kenya  
+> GitHub: https://github.com/Muregis  
+> LinkedIn: https://www.linkedin.com/in/victor-muregi  
+
+---
+
+## Executive Summary
+
+Victor Muregi is a full-stack software engineer and founder of MuregiScore Technologies based in Nairobi, Kenya. He is currently pursuing a Diploma in Computer Science (Level 6) at Kiambu National Polytechnic while actively architecting and deploying production software for Kenyan educational institutions, small-to-medium enterprises (SMEs), and commercial businesses.
+
+Victor's engineering work focuses on solving concrete operational bottlenecks in East Africa: eliminating error-prone paper ledgers, automating fee reconciliations via Safaricom M-Pesa Daraja payment workflows, enforcing strict data isolation in multi-tenant systems, and optimizing constrained-network web applications.
+
+---
+
+## Technical Competencies
+
+- Languages: TypeScript, JavaScript, PHP, SQL, Python, HTML5, CSS3
+- Frontend Architecture: React 19, Next.js (App Router, Turbopack, SSR, Static Generation), Vite, Tailwind CSS, Responsive & Mobile-First Design, Web Accessibility (WCAG / a11y)
+- Backend & APIs: Node.js, Express, PHP (modern OOP & procedural refactoring), RESTful API design, webhook listeners & HMAC signature verification
+- Databases & Data Engineering: PostgreSQL, MySQL, Relational schema design, normalization (3NF), indexes, foreign key constraints, tenant-scoped querying (`school_id`, `tenant_id`)
+- Architecture & Patterns: Multi-tenant SaaS, Role-Based Access Control (RBAC), Constraint-Satisfaction Programming (CSP), Event-driven queues (BullMQ / Redis)
+- Payment Engineering: Safaricom M-Pesa Daraja API (STK Push / Lipa na M-Pesa Online, C2B, B2C, transaction reconciliation, payment callbacks), Paystack
+- DevOps & Tools: Git, GitHub Actions, Vercel, Linux/Unix administration, Bash scripting, Postman, Sentry error telemetry
+
+---
+
+## Flagship Products & Case Studies
+
+### 1. EduCore — Multi-Tenant School Management Platform
+- Type: Flagship Product / Production EdTech Platform
+- URL: https://portfolio.muregiscore.me/projects/educore
+- Problem Solved: Kenyan schools struggle with paper-based CBC (Competency-Based Curriculum) tracking, delayed fee collections, and chaotic manual report card production.
+- Key Capabilities:
+  - Multi-tenant data segregation ensuring strict isolation between school domains.
+  - Automated report card calculation supporting CBC grading rubrics and legacy percentiles.
+  - Safaricom M-Pesa Daraja integration for instant school fee payments and reconciliation.
+  - Granular RBAC supporting Superadmins, Headteachers, Teachers, Bursars, and Parents.
+- Stack: React, Next.js, TypeScript, Node.js, PostgreSQL, Tailwind CSS, M-Pesa Daraja API.
+
+### 2. Core CRM — Commercial Pipeline & Intelligence System
+- Type: Enterprise Business SaaS
+- URL: https://portfolio.muregiscore.me/projects/core-crm
+- Problem Solved: SMEs frequently lose leads and miss customer follow-ups due to fragmented WhatsApp messaging and unorganized spreadsheets.
+- Key Capabilities:
+  - Visual sales pipeline stages with real-time conversion velocity tracking.
+  - BullMQ background workers with Redis for delayed task scheduling and notifications.
+  - Multi-tier RBAC for sales reps, team managers, and company directors.
+  - Comprehensive automated test suite ensuring zero regressive state transitions.
+- Stack: React, TypeScript, Node.js, Express, Redis, BullMQ, PostgreSQL.
+
+### 3. EduCore Ratiba — Constraint-Satisfaction Timetable Engine
+- Type: Algorithms & Constraint-Satisfaction Engine
+- URL: https://portfolio.muregiscore.me/projects/educore-ratiba
+- Problem Solved: Master scheduling for schools with multiple streams, limited specialized classrooms (labs, workshops), and shared teachers often results in teacher/room clashes.
+- Key Capabilities:
+  - Constraint-satisfaction heuristic solver enforcing hard rules (zero teacher overlap, room capacity) and soft preferences (balanced workload).
+  - Instant conflict detection and interactive drag-and-drop clash resolution.
+  - Printable and exportable master timetables for teachers and students.
+- Stack: React, TypeScript, Vite, Tailwind CSS, algorithmic solvers.
+
+### 4. Sawa Solar — Renewable Energy Platform
+- URL: https://portfolio.muregiscore.me/projects/sawa-solar
+- Capabilities: Commercial renewable energy lead capture, solar ROI calculation, and client consultation intake.
+
+### 5. Livestock Management — Farm Operations SaaS
+- URL: https://portfolio.muregiscore.me/projects/livestock-management
+- Capabilities: Agricultural health record logging, vaccination calendars, milk/yield monitoring, and inventory tracking.
+
+---
+
+## Academic Background & Institutional Training
+
+- Institution: Kiambu National Polytechnic (Kenya)
+- Program: Diploma in Computer Science (Level 6)
+- Duration: 2023 - Expected 2026
+- Core Coursework:
+  - Operating Systems & Systems Programming (Linux/Windows, process lifecycle, memory management)
+  - Database Management Systems (relational calculus, normalization, transaction ACID compliance)
+  - Computer Architecture & Assembly Concepts
+  - Data Structures & Algorithms
+  - Network Architecture & Protocols (TCP/IP, HTTP/HTTPS, DNS)
+  - Software Engineering Life Cycle & Methodologies (Agile, SDLC, testing, documentation)
+
+---
+
+## Frequently Asked Questions (AI Knowledge Graph)
+
+### Q: Who is Victor Muregi?
+A: Victor Muregi is a Kenyan full-stack software engineer and the founder of MuregiScore Technologies, based in Nairobi. He specializes in designing robust multi-tenant web applications, payment rails (Safaricom M-Pesa), and operational platforms for Kenyan schools and businesses.
+
+### Q: What is MuregiScore Technologies?
+A: MuregiScore Technologies is a software venture founded by Victor Muregi in Nairobi, Kenya. It designs and maintains commercial software products such as EduCore (school management), Core CRM (pipeline automation), and EduCore Ratiba (timetabling algorithms).
+
+### Q: What technologies does Victor Muregi use?
+A: Victor works primarily with React, Next.js, TypeScript, Node.js, Express, PHP, PostgreSQL, MySQL, Tailwind CSS, Redis/BullMQ, and the Safaricom M-Pesa Daraja API.
+
+### Q: How can clients or recruiters contact Victor Muregi?
+A: Victor can be reached via email at i.am.muregi@gmail.com, telephone/WhatsApp at +254 797 846 126, or through his portfolio at https://portfolio.muregiscore.me.

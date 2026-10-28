@@ -90,6 +90,10 @@ export const personSchema = {
   email: `mailto:${site.email}`,
   telephone: site.phoneE164,
   jobTitle: "Full-Stack Developer & Founder",
+  description:
+    "Victor Muregi is a full-stack software engineer and founder of MuregiScore Technologies in Nairobi, Kenya, engineering multi-tenant systems, institutional platforms, and M-Pesa Daraja payment workflows.",
+  disambiguatingDescription:
+    "Kenyan full-stack software engineer, founder of MuregiScore Technologies, and creator of EduCore School Management System.",
   worksFor: { "@id": `${site.url}/#organization` },
   alumniOf: {
     "@type": "CollegeOrUniversity",
@@ -101,11 +105,19 @@ export const personSchema = {
     addressCountry: "KE"
   },
   knowsAbout: [
-    "Full-stack web development",
-    "M-Pesa Daraja API integration",
-    "School management systems",
-    "Financial reporting systems",
-    "Java, Python, C++, JavaScript"
+    "Full-Stack Web Development",
+    "React & Next.js",
+    "TypeScript & JavaScript",
+    "Node.js & Express",
+    "PHP",
+    "PostgreSQL & MySQL",
+    "Safaricom M-Pesa Daraja API Integration",
+    "Role-Based Access Control (RBAC)",
+    "Multi-Tenant SaaS Architecture",
+    "EduCore School Management System",
+    "Core CRM",
+    "EduCore Ratiba Timetabling Engine",
+    "BullMQ Background Job Queues"
   ],
   sameAs: [site.github, site.linkedin, site.instagram, site.facebook]
 };

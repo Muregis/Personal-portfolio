@@ -10,6 +10,10 @@ const baseConfig: NextConfig = {
   turbopack: {
     root: process.cwd()
   },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 31536000
+  },
   async headers() {
     return [
       {
@@ -21,6 +25,24 @@ const baseConfig: NextConfig = {
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+          }
+        ]
+      },
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        source: "/:file(favicon.*|apple-touch-icon.*|icon-.*|muregiscore-logo.*|og.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable"
           }
         ]
       }
