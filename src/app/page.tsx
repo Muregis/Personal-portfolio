@@ -261,7 +261,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#projects"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-cyan-500/30 transition-opacity hover:opacity-90"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-cyan-500/30 transition-colors hover:brightness-110"
                 >
                   Flagship Projects
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -288,7 +288,7 @@ export default function HomePage() {
                 </a>
                 <Link
                   href="/academic"
-                  className="inline-flex items-center gap-2 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-6 py-3 font-semibold text-fuchsia-100 transition-colors hover:bg-fuchsia-300/20"
+                  className="inline-flex items-center gap-2 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-6 py-3 font-semibold text-fuchsia-100 transition-colors hover:bg-fuchsia-400/20"
                 >
                   Academic Portfolio
                   <GraduationCap className="h-4 w-4" aria-hidden="true" />
@@ -347,10 +347,10 @@ export default function HomePage() {
                   and an active software engineer who builds systems to solve concrete operational bottlenecks in Kenya.
                 </p>
                 <p>
-                  Across Kenyan schools, commercial businesses, and agricultural enterprises, administrators frequently depend on error-prone paper ledgers, fragmented WhatsApp communication, or bloated overseas software that fails under local network realities.
+                  Across Kenyan schools, commercial businesses, and agricultural enterprises, administrators frequently depend on error-prone paper ledgers, fragmented WhatsApp communication, or siloed spreadsheets for operational oversight.
                 </p>
                 <p>
-                  Through <strong className="text-white font-semibold">MuregiScore Technologies</strong>, I design, architect, and ship production-grade web software — such as <strong className="text-cyan-200">EduCore</strong> (school operations &amp; CBC report cards), <strong className="text-cyan-200">Core CRM</strong> (multi-tier pipeline management), and <strong className="text-cyan-200">EduCore Ratiba</strong> (combinatorial timetable scheduling engine) — paired with resilient Safaricom M-Pesa Daraja payment workflows.
+                  Through <strong className="text-white font-semibold">MuregiScore Technologies</strong>, I design, architect, and ship production-grade web software — such as <strong className="text-white font-semibold">school management systems</strong>, <strong className="text-white font-semibold">CRM platforms</strong>, and <strong className="text-white font-semibold">financial tools</strong> — to replace fragile workflows with dependable digital systems.
                 </p>
               </div>
             </div>
@@ -494,7 +494,7 @@ export default function HomePage() {
               <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/40 p-5 text-sm leading-relaxed text-slate-300">
                 <p className="font-semibold text-white mb-2">Engineering Philosophy</p>
                 <p>
-                  I prioritize strong fundamentals over superficial frameworks: relational normalization, transaction integrity, strict role-based access control, idempotent webhooks, and sub-second rendering on entry-level Android devices.
+                  I prioritize strong fundamentals over superficial frameworks: relational normalization, transaction integrity, strict role-based access control, idempotent webhooks, and secure deployment practices that keep systems dependable under real-world usage.
                 </p>
               </div>
             </div>
@@ -579,7 +579,7 @@ export default function HomePage() {
             </ul>
             <Link
               href="/academic"
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-6 py-3 font-semibold text-fuchsia-100 transition-colors hover:bg-fuchsia-300/20"
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-6 py-3 font-semibold text-fuchsia-100 transition-colors hover:bg-fuchsia-400/20"
             >
               Explore Academic Portfolio &amp; Labs
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -629,7 +629,7 @@ export default function HomePage() {
           aria-labelledby="payments-heading"
           className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24"
         >
-          <div className="rounded-[2rem] border border-emerald-300/20 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.22),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_32%),linear-gradient(135deg,rgba(3,7,18,0.92),rgba(6,20,31,0.9))] p-8 md:p-10">
+          <div className="rounded-[2rem] border border-emerald-300/20 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.22),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.16),transparent_28%),linear-gradient(180deg,rgba(3,7,18,0.8),rgba(2,6,23,0.96))] p-8 md:p-10">
             <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
               <div>
                 <p className="inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-300/10 px-4 py-2 text-sm text-emerald-100">
@@ -643,7 +643,7 @@ export default function HomePage() {
                   Production M-Pesa &amp; Payment Rails
                 </h2>
                 <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-200">
-                  Production Safaricom Daraja integrations engineered with idempotent webhook verification, database transaction locking, and zero double-crediting guarantees across STK Push, C2B, and B2C disbursals.
+                  Production Safaricom Daraja integrations engineered with idempotent webhook verification, database transaction locking, and zero double-crediting guarantees across STK Push, C2B, B2C, and reconciliation workflows.
                 </p>
                 <ul className="mt-6 flex flex-wrap gap-3">
                   {[
@@ -684,7 +684,7 @@ export default function HomePage() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400 px-6 py-3 font-semibold text-slate-950 transition-opacity hover:opacity-90"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 via-green-400 to-lime-400 px-6 py-3 font-semibold text-slate-950"
                 >
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                   Chat on WhatsApp

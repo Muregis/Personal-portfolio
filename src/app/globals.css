@@ -91,11 +91,11 @@ summary::-webkit-details-marker {
 
 .glass {
   background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.78), rgba(8, 15, 28, 0.72)),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(8, 15, 28, 0.85)),
     var(--panel);
   border: 1px solid var(--border);
   backdrop-filter: blur(16px);
-  box-shadow: 0 18px 50px rgba(2, 6, 23, 0.28);
+  box-shadow: 0 18px 50px rgba(2, 6, 23, 0.35);
 }
 
 .section-grid {
@@ -108,5 +108,25 @@ summary::-webkit-details-marker {
 @media (max-width: 640px) {
   body {
     background-attachment: scroll;
+  }
+}
+
+/* Sticky header support */
+@supports (backdrop-filter: blur(12px)) {
+  header {
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+/* Account for sticky header when jumping to section anchors */
+@media (max-width: 640px) {
+  .section-grid section {
+    scroll-margin-top: 4.5rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .section-grid section {
+    scroll-margin-top: 5rem;
   }
 }
