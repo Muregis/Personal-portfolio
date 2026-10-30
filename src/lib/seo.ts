@@ -119,7 +119,7 @@ export const personSchema = {
     "EduCore Ratiba Timetabling Engine",
     "BullMQ Background Job Queues"
   ],
-  sameAs: [site.github, site.linkedin, site.instagram, site.facebook]
+  sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"]
 };
 
 /** LocalBusiness (ProfessionalService) schema for MuregiScore Technologies. */
@@ -146,7 +146,7 @@ export const organizationSchema = {
     { "@type": "Continent", name: "Africa" }
   ],
   priceRange: "$$",
-  sameAs: [site.github, site.linkedin, site.instagram, site.facebook]
+  sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"]
 };
 
 export const websiteSchema = {

@@ -245,9 +245,14 @@ export default function HomePage() {
                 <RoleRotator />
                 <p className="max-w-3xl text-lg leading-8 text-slate-300">
                   Full-stack software engineer and founder of{" "}
-                  <span className="font-semibold text-white underline decoration-cyan-300/60 underline-offset-4">
+                  <a
+                    href="https://muregiscore.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-white underline decoration-cyan-300/60 hover:decoration-cyan-300 underline-offset-4 transition-colors"
+                  >
                     MuregiScore Technologies
-                  </span>{" "}
+                  </a>{" "}
                   in Nairobi, Kenya. I build production web applications, database systems, and institutional platforms with{" "}
                   <strong className="text-white font-semibold">React</strong>,{" "}
                   <strong className="text-white font-semibold">TypeScript</strong>,{" "}
@@ -350,7 +355,7 @@ export default function HomePage() {
                   Across Kenyan schools, commercial businesses, and agricultural enterprises, administrators frequently depend on error-prone paper ledgers, fragmented WhatsApp communication, or siloed spreadsheets for operational oversight.
                 </p>
                 <p>
-                  Through <strong className="text-white font-semibold">MuregiScore Technologies</strong>, I design, architect, and ship production-grade web software — such as <strong className="text-white font-semibold">school management systems</strong>, <strong className="text-white font-semibold">CRM platforms</strong>, and <strong className="text-white font-semibold">financial tools</strong> — to replace fragile workflows with dependable digital systems.
+                  Through <a href="https://muregiscore.me" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-200 underline font-semibold">MuregiScore Technologies</a>, I design, architect, and ship production-grade web software — such as <strong className="text-white font-semibold">school management systems</strong>, <strong className="text-white font-semibold">CRM platforms</strong>, and <strong className="text-white font-semibold">financial tools</strong> — to replace fragile workflows with dependable digital systems.
                 </p>
               </div>
             </div>
@@ -606,7 +611,7 @@ export default function HomePage() {
               Production Product Portfolio
             </h2>
             <p className="mt-3 text-slate-300">
-              Flagship systems engineered and operated under MuregiScore Technologies.
+              Flagship systems engineered and operated under <a href="https://muregiscore.me" target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-cyan-200 underline font-semibold">MuregiScore Technologies</a>.
             </p>
             <div className="mt-6 grid gap-4">
               {products.map((product) => (
