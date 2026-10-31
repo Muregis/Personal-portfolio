@@ -11,7 +11,7 @@ export const shareImage = {
 };
 
 const description =
-  "Victor Muregi is a full-stack engineer and founder of MuregiScore Technologies in Nairobi, Kenya, building React, Node, PostgreSQL, and M-Pesa web systems.";
+  "Victor Muregi | Full-stack developer at MuregiScore Technologies, Nairobi. Multi-tenant SaaS, M-Pesa Daraja, EduCore school systems, React, Node, PostgreSQL.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -25,16 +25,17 @@ export const siteMetadata: Metadata = {
   creator: site.name,
   keywords: [
     "Victor Muregi",
-    "Full-Stack Software Engineer",
+    "Victor Muregi Nairobi",
+    "Victor Muregi MuregiScore",
+    "Victor Muregi full-stack developer",
+    "MuregiScore Technologies",
+    "Full-Stack Software Engineer Kenya",
     "React TypeScript developer Nairobi",
     "Node Express PostgreSQL developer Kenya",
-    "PHP MySQL developer Nairobi",
     "M-Pesa Daraja API integration specialist",
-    "Role-Based Access Control RBAC",
     "EduCore School Management System",
     "EduCore Ratiba Timetabling Engine",
-    "Core CRM",
-    "MuregiScore Technologies"
+    "Core CRM Kenya"
   ],
   alternates: {
     canonical: "/"
@@ -44,13 +45,13 @@ export const siteMetadata: Metadata = {
     locale: "en_KE",
     url: site.url,
     siteName: `${site.name} — ${site.brand}`,
-    title: `${site.name} | Full-Stack Developer & Founder`,
+    title: `${site.name} | Full-Stack Developer & Founder | MuregiScore Technologies`,
     description,
     images: [shareImage]
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | Full-Stack Developer & Founder`,
+    title: `${site.name} | Full-Stack Developer | MuregiScore · Nairobi`,
     description,
     images: [shareImage],
     creator: "@i_am.muregi"
@@ -79,128 +80,56 @@ export const siteMetadata: Metadata = {
   category: "technology"
 };
 
-/** Person schema for the site owner (single source of truth). */
+export function projectMetadata(project: Project): Metadata {
+  const title = `${project.name} | Victor Muregi · MuregiScore`;
+  const desc = project.summary || description;
+  return {
+    title,
+    description: desc,
+    openGraph: {
+      title,
+      description: desc,
+      url: absolute(`/#projects`),
+      images: [shareImage]
+    }
+  };
+}
+
 export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": `${site.url}/#person`,
-  name: site.name,
-  url: site.url,
-  image: absolute(site.logo.png),
-  email: `mailto:${site.email}`,
-  telephone: site.phoneE164,
-  jobTitle: "Full-Stack Developer & Founder",
-  description:
-    "Victor Muregi is a full-stack software engineer and founder of MuregiScore Technologies in Nairobi, Kenya, engineering multi-tenant systems, institutional platforms, and M-Pesa Daraja payment workflows.",
-  disambiguatingDescription:
-    "Kenyan full-stack software engineer, founder of MuregiScore Technologies, and creator of EduCore School Management System.",
-  worksFor: { "@id": `${site.url}/#organization` },
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Kiambu National Polytechnic"
+  name: "Victor Muregi",
+  alternateName: ["Muregi", "I_am.muregi", "Muregis"],
+  jobTitle: "Full-Stack Software Engineer & Founder",
+  worksFor: {
+    "@type": "Organization",
+    name: "MuregiScore Technologies",
+    url: "https://muregiscore.me"
   },
+  url: site.url,
+  sameAs: [site.github, site.linkedin, "https://muregiscore.me"],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Nairobi",
     addressCountry: "KE"
   },
-  knowsAbout: [
-    "Full-Stack Web Development",
-    "React & Next.js",
-    "TypeScript & JavaScript",
-    "Node.js & Express",
-    "PHP",
-    "PostgreSQL & MySQL",
-    "Safaricom M-Pesa Daraja API Integration",
-    "Role-Based Access Control (RBAC)",
-    "Multi-Tenant SaaS Architecture",
-    "EduCore School Management System",
-    "Core CRM",
-    "EduCore Ratiba Timetabling Engine",
-    "BullMQ Background Job Queues"
-  ],
-  sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"]
-};
-
-/** LocalBusiness (ProfessionalService) schema for MuregiScore Technologies. */
-export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": `${site.url}/#organization`,
-  name: site.brand,
-  url: site.url,
-  image: absolute(site.logo.png),
-  logo: absolute(site.logo.svg),
   email: site.email,
-  telephone: site.phoneE164,
-  slogan: site.tagline,
-  foundingDate: "2024",
-  founder: { "@id": `${site.url}/#person` },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Nairobi",
-    addressCountry: "KE"
-  },
-  areaServed: [
-    { "@type": "Country", name: "Kenya" },
-    { "@type": "Continent", name: "Africa" }
-  ],
-  priceRange: "$$",
-  sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"]
+  description
 };
 
-export const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${site.url}/#website`,
-  url: site.url,
-  name: `${site.name} — Full-Stack Developer`,
-  description,
-  publisher: { "@id": `${site.url}/#organization` },
-  inLanguage: "en"
-};
-
-export const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map(({ q, a }) => ({
-    "@type": "Question",
-    name: q,
-    acceptedAnswer: { "@type": "Answer", text: a }
-  }))
-};
-
-export function breadcrumbSchema(items: { label: string; href?: string }[]) {
+export function breadcrumbSchema(
+  items: { label: string; href?: string }[]
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
+    itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
-      position: index + 1,
+      position: i + 1,
       name: item.label,
       ...(item.href ? { item: absolute(item.href) } : {})
     }))
   };
 }
 
-export function projectSchema(project: Project) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "@id": `${site.url}/projects/${project.slug}#software`,
-    name: project.title,
-    headline: project.tagline,
-    description: project.summary,
-    applicationCategory: project.tag,
-    operatingSystem: "Web",
-    author: { "@id": `${site.url}/#person` },
-    url: `${site.url}/projects/${project.slug}`,
-    image: absolute(project.image),
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "KES"
-    }
-  };
-}
-
+export { faqs };
