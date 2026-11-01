@@ -35,7 +35,9 @@ export const siteMetadata: Metadata = {
     "M-Pesa Daraja API integration specialist",
     "EduCore School Management System",
     "EduCore Ratiba Timetabling Engine",
-    "Core CRM Kenya"
+    "Core CRM Kenya",
+    "Kenyan software engineer",
+    "Nairobi full-stack developer"
   ],
   alternates: {
     canonical: "/"
@@ -92,7 +94,7 @@ export const personSchema = {
     url: "https://muregiscore.me"
   },
   url: site.url,
-  sameAs: [site.github, site.linkedin, "https://muregiscore.me"],
+  sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Nairobi",
@@ -107,7 +109,7 @@ export const organizationSchema = {
   "@type": "Organization",
   name: "MuregiScore Technologies",
   url: "https://muregiscore.me",
-  logo: absolute("/muregiscore-logo.png"),
+  logo: absolute(site.logo.png),
   founder: {
     "@type": "Person",
     name: "Victor Muregi",
@@ -118,7 +120,7 @@ export const organizationSchema = {
     addressLocality: "Nairobi",
     addressCountry: "KE"
   },
-  sameAs: [site.github]
+  sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"]
 };
 
 export const websiteSchema = {
@@ -138,10 +140,10 @@ export const faqSchema = {
   "@type": "FAQPage",
   mainEntity: faqs.map((item) => ({
     "@type": "Question",
-    name: "q" in item ? item.q : (item as { question: string }).question,
+    name: item.question,
     acceptedAnswer: {
       "@type": "Answer",
-      text: "a" in item ? item.a : (item as { answer: string }).answer
+      text: item.answer
     }
   }))
 };
@@ -167,7 +169,7 @@ export function projectSchema(project: Project) {
     description: project.summary,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    url: project.liveDemoUrl || project.repoUrl,
+    url: project.liveDemoUrl || project.repoUrl || `${site.url}/projects/${project.slug}`,
     author: {
       "@type": "Person",
       name: "Victor Muregi"
