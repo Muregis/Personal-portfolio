@@ -80,21 +80,6 @@ export const siteMetadata: Metadata = {
   category: "technology"
 };
 
-export function projectMetadata(project: Project): Metadata {
-  const title = `${project.name} | Victor Muregi · MuregiScore`;
-  const desc = project.summary || description;
-  return {
-    title,
-    description: desc,
-    openGraph: {
-      title,
-      description: desc,
-      url: absolute(`/#projects`),
-      images: [shareImage]
-    }
-  };
-}
-
 export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -117,19 +102,72 @@ export const personSchema = {
   description
 };
 
-export function breadcrumbSchema(
-  items: { label: string; href?: string }[]
-) {
+export const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "MuregiScore Technologies",
+  url: "https://muregiscore.me",
+  logo: absolute("/muregiscore-logo.png"),
+  founder: {
+    "@type": "Person",
+    name: "Victor Muregi",
+    url: site.url
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nairobi",
+    addressCountry: "KE"
+  },
+  sameAs: [site.github]
+};
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Victor Muregi — Engineering Portfolio",
+  url: site.url,
+  description,
+  publisher: {
+    "@type": "Person",
+    name: "Victor Muregi"
+  }
+};
+
+export const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: { "@type": "Answer", text: answer }
+  }))
+};
+
+export function breadcrumbSchema(items: { label: string; href?: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: items.map((item, i) => ({
+    itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
-      position: i + 1,
+      position: index + 1,
       name: item.label,
       ...(item.href ? { item: absolute(item.href) } : {})
     }))
   };
 }
 
-export { faqs };
+export function projectSchema(project: Project) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.name,
+    description: project.summary,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    url: project.liveDemoUrl || project.repoUrl,
+    author: {
+      "@type": "Person",
+      name: "Victor Muregi"
+    }
+  };
+}
