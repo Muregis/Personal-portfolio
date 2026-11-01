@@ -82,69 +82,92 @@ export const siteMetadata: Metadata = {
   category: "technology"
 };
 
+/** Person schema for the site owner (single source of truth). */
 export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Victor Muregi",
+  "@id": `${site.url}/#person`,
+  name: site.name,
   alternateName: ["Muregi", "I_am.muregi", "Muregis"],
-  jobTitle: "Full-Stack Software Engineer & Founder",
-  worksFor: {
-    "@type": "Organization",
-    name: "MuregiScore Technologies",
-    url: "https://muregiscore.me"
-  },
   url: site.url,
-  sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"],
+  image: absolute(site.logo.png),
+  email: `mailto:${site.email}`,
+  telephone: site.phoneE164,
+  jobTitle: "Full-Stack Software Engineer & Founder",
+  worksFor: { "@id": `${site.url}/#organization` },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Kiambu National Polytechnic"
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Nairobi",
     addressCountry: "KE"
   },
-  email: site.email,
+  knowsAbout: [
+    "Full-Stack Web Development",
+    "React & Next.js",
+    "TypeScript & JavaScript",
+    "Node.js & Express",
+    "PHP",
+    "PostgreSQL & MySQL",
+    "Safaricom M-Pesa Daraja API Integration",
+    "Role-Based Access Control (RBAC)",
+    "Multi-Tenant SaaS Architecture",
+    "EduCore School Management System",
+    "Core CRM",
+    "EduCore Ratiba Timetabling Engine",
+    "BullMQ Background Job Queues"
+  ],
+  sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"],
   description
 };
 
+/** LocalBusiness (ProfessionalService) schema for MuregiScore Technologies. */
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "MuregiScore Technologies",
+  "@type": "ProfessionalService",
+  "@id": `${site.url}/#organization`,
+  name: site.brand,
   url: "https://muregiscore.me",
-  logo: absolute(site.logo.png),
-  founder: {
-    "@type": "Person",
-    name: "Victor Muregi",
-    url: site.url
-  },
+  image: absolute(site.logo.png),
+  logo: absolute(site.logo.svg),
+  email: site.email,
+  telephone: site.phoneE164,
+  slogan: site.tagline,
+  foundingDate: "2024",
+  founder: { "@id": `${site.url}/#person` },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Nairobi",
     addressCountry: "KE"
   },
+  areaServed: [
+    { "@type": "Country", name: "Kenya" },
+    { "@type": "Continent", name: "Africa" }
+  ],
+  priceRange: "$$",
   sameAs: [site.github, site.linkedin, site.instagram, site.facebook, "https://muregiscore.me"]
 };
 
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Victor Muregi — Engineering Portfolio",
+  "@id": `${site.url}/#website`,
   url: site.url,
+  name: `${site.name} — Full-Stack Developer`,
   description,
-  publisher: {
-    "@type": "Person",
-    name: "Victor Muregi"
-  }
+  publisher: { "@id": `${site.url}/#organization` },
+  inLanguage: "en"
 };
 
 export const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqs.map((item) => ({
+  mainEntity: faqs.map(({ q, a }) => ({
     "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer
-    }
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a }
   }))
 };
 
@@ -165,14 +188,19 @@ export function projectSchema(project: Project) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: project.name,
+    "@id": `${site.url}/projects/${project.slug}#software`,
+    name: project.title,
+    headline: project.tagline,
     description: project.summary,
-    applicationCategory: "BusinessApplication",
+    applicationCategory: project.tag,
     operatingSystem: "Web",
+    author: { "@id": `${site.url}/#person` },
     url: project.liveDemoUrl || project.repoUrl || `${site.url}/projects/${project.slug}`,
-    author: {
-      "@type": "Person",
-      name: "Victor Muregi"
+    image: absolute(project.image),
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "KES"
     }
   };
 }
