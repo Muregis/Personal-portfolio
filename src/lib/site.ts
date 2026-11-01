@@ -57,7 +57,14 @@ export const nav = {
   ]
 };
 
-export type Project = {
+export const roles = [
+  "Full-Stack Software Engineer",
+  "Systems Builder",
+  "M-Pesa Integration Specialist",
+  "Founder, MuregiScore Technologies"
+];
+
+export interface Project {
   slug: string;
   name: string;
   summary: string;
@@ -67,7 +74,7 @@ export type Project = {
   image?: string;
   featured?: boolean;
   status?: string;
-};
+}
 
 export const projects: Project[] = [
   {
@@ -115,15 +122,99 @@ export const projects: Project[] = [
   }
 ];
 
+export function getProject(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
+}
+
+export function getAllProjects(): Project[] {
+  return projects;
+}
+
+export const stats = [
+  { label: "Flagship systems", value: "3+" },
+  { label: "Live demos", value: "EduCore + Ratiba" },
+  { label: "CI on flagships", value: "Yes" },
+  { label: "Founded MuregiScore", value: "2024" }
+];
+
+export const journey = [
+  { year: "2023", event: "Enrolled in Diploma Level 6 Computer Science at Kiambu National Polytechnic" },
+  { year: "2024", event: "Founded MuregiScore Technologies to build software for Kenyan schools and SMEs" },
+  { year: "2025–2026", event: "Shipped EduCore, Core CRM, and EduCore Ratiba with tests, CI, and public demos" },
+  { year: "2026+", event: "Open to software engineering roles and focused product/implementation work" }
+];
+
+export const values = [
+  { icon: "shield", title: "Tenant isolation first", text: "school_id / tenant_id boundaries as a design constraint, not an afterthought." },
+  { icon: "rocket", title: "Ship real systems", text: "Public demos, tests, and honest scope over vaporware slides." },
+  { icon: "grad", title: "Learn by building", text: "Diploma coursework paired with production patterns: RBAC, queues, payments." }
+];
+
+export interface TimelineItem {
+  year: string;
+  title: string;
+  detail: string;
+}
+
+export const timeline: TimelineItem[] = [
+  { year: "2024 – Present", title: "Founder & Full-Stack Developer", detail: "MuregiScore Technologies — EduCore, Ratiba, Core CRM." },
+  { year: "2023 – Present", title: "Client web work", detail: "Institutional and marketing sites for local businesses." },
+  { year: "2023 – Present", title: "Computer Science (Diploma L6)", detail: "Kiambu National Polytechnic." }
+];
+
+export const skillGroups = [
+  { title: "Languages", items: ["TypeScript", "JavaScript", "PHP", "SQL"] },
+  { title: "Frontend", items: ["React", "Next.js", "Vite", "Tailwind"] },
+  { title: "Backend", items: ["Node/Express", "PHP", "REST", "Webhooks"] },
+  { title: "Data & jobs", items: ["PostgreSQL", "MySQL", "BullMQ", "Redis"] },
+  { title: "Payments", items: ["M-Pesa Daraja", "Paystack"] },
+  { title: "Ops", items: ["GitHub Actions", "Vercel", "Render"] }
+];
+
+export const proficiency = [
+  { name: "React / TypeScript", level: 85 },
+  { name: "Node / Express", level: 80 },
+  { name: "PostgreSQL / MySQL", level: 78 },
+  { name: "RBAC & multi-tenancy", level: 82 },
+  { name: "M-Pesa patterns", level: 75 }
+];
+
+export const products = [
+  { name: "EduCore", blurb: "School management SaaS" },
+  { name: "EduCore Ratiba", blurb: "Timetable engine" },
+  { name: "Core CRM", blurb: "SME CRM architecture" }
+];
+
+export const education = {
+  school: "Kiambu National Polytechnic",
+  program: "Diploma in Computer Science (Level 6)",
+  period: "2023 – Present (expected 2026)",
+  notes: "Programming, databases, software engineering, networks, systems analysis."
+};
+
+export const testimonials: { quote: string; name: string; role: string }[] = [];
+
 export const faqs = [
   {
-    question: "What does Victor Muregi build?",
-    answer:
-      "Multi-tenant web systems for Kenyan schools and SMEs — including EduCore, EduCore Ratiba, and Core CRM — with RBAC, tenant isolation, and M-Pesa patterns."
+    q: "What roles are you targeting?",
+    a: "Software engineering roles and focused product/implementation work — especially edtech, SME SaaS, and African-market products."
   },
   {
-    question: "What is MuregiScore Technologies?",
-    answer:
-      "MuregiScore Technologies is the company founded by Victor Muregi in Nairobi to engineer education, payment, and operations software for Africa."
+    q: "Where should a reviewer start?",
+    a: "EduCore (live multi-tenant school SaaS), Core CRM (tests + BullMQ on GitHub), and EduCore Ratiba (live timetable + clash tests)."
+  },
+  {
+    q: "What is MuregiScore Technologies?",
+    a: "The company founded by Victor Muregi in Nairobi to engineer education, payment, and operations software."
   }
 ];
+
+export const academic = {
+  institution: "Kiambu National Polytechnic",
+  program: "Diploma in Computer Science (Level 6)",
+  period: "2023 – Present",
+  highlights: [
+    "Top 5 Innovator, Kiambu Polytechnic Innovation Challenge (2024) — EduCore",
+    "Hands-on systems work alongside coursework"
+  ]
+};
